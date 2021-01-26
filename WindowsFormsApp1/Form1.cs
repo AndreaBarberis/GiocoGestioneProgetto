@@ -157,10 +157,5 @@ namespace WindowsFormsApp1
             frmExtra f = new frmExtra();
             f.Show();
         }
-
-        private void label1_Click(object sender, EventArgs e)
-        {
-
-        }
     }
 }
