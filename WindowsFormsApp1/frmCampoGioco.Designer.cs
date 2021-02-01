@@ -44,12 +44,9 @@
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.btnOpzioni = new System.Windows.Forms.Button();
-            this.N1 = new System.Windows.Forms.NumericUpDown();
-            this.N2 = new System.Windows.Forms.NumericUpDown();
-            this.N3 = new System.Windows.Forms.NumericUpDown();
-            ((System.ComponentModel.ISupportInitialize)(this.N1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.N2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.N3)).BeginInit();
+            this.txtF1 = new System.Windows.Forms.TextBox();
+            this.txtF2 = new System.Windows.Forms.TextBox();
+            this.txtF3 = new System.Windows.Forms.TextBox();
             this.SuspendLayout();
             // 
             // txtTruppeDisponibili
@@ -158,6 +155,7 @@
             this.btnAzioni.TabIndex = 9;
             this.btnAzioni.Text = "azioni";
             this.btnAzioni.UseVisualStyleBackColor = false;
+            this.btnAzioni.Click += new System.EventHandler(this.btnAzioni_Click);
             // 
             // btnEsci
             // 
@@ -215,26 +213,26 @@
             this.btnOpzioni.UseVisualStyleBackColor = false;
             this.btnOpzioni.Click += new System.EventHandler(this.btnOpzioni_Click);
             // 
-            // N1
+            // txtF1
             // 
-            this.N1.Location = new System.Drawing.Point(209, 98);
-            this.N1.Name = "N1";
-            this.N1.Size = new System.Drawing.Size(92, 20);
-            this.N1.TabIndex = 15;
+            this.txtF1.Location = new System.Drawing.Point(191, 95);
+            this.txtF1.Name = "txtF1";
+            this.txtF1.Size = new System.Drawing.Size(100, 20);
+            this.txtF1.TabIndex = 15;
             // 
-            // N2
+            // txtF2
             // 
-            this.N2.Location = new System.Drawing.Point(364, 191);
-            this.N2.Name = "N2";
-            this.N2.Size = new System.Drawing.Size(74, 20);
-            this.N2.TabIndex = 16;
+            this.txtF2.Location = new System.Drawing.Point(353, 199);
+            this.txtF2.Name = "txtF2";
+            this.txtF2.Size = new System.Drawing.Size(100, 20);
+            this.txtF2.TabIndex = 16;
             // 
-            // N3
+            // txtF3
             // 
-            this.N3.Location = new System.Drawing.Point(559, 269);
-            this.N3.Name = "N3";
-            this.N3.Size = new System.Drawing.Size(68, 20);
-            this.N3.TabIndex = 17;
+            this.txtF3.Location = new System.Drawing.Point(597, 278);
+            this.txtF3.Name = "txtF3";
+            this.txtF3.Size = new System.Drawing.Size(100, 20);
+            this.txtF3.TabIndex = 17;
             // 
             // frmCampoGioco
             // 
@@ -243,9 +241,9 @@
             this.BackgroundImage = global::WindowsFormsApp1.Properties.Resources.WWOne09;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(915, 518);
-            this.Controls.Add(this.N3);
-            this.Controls.Add(this.N2);
-            this.Controls.Add(this.N1);
+            this.Controls.Add(this.txtF3);
+            this.Controls.Add(this.txtF2);
+            this.Controls.Add(this.txtF1);
             this.Controls.Add(this.btnOpzioni);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
@@ -268,9 +266,6 @@
             this.Text = "frmCampoGioco";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.frmCampoGioco_FormClosing);
             this.Load += new System.EventHandler(this.frmCampoGioco_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.N1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.N2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.N3)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -293,8 +288,8 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Button btnOpzioni;
-        private System.Windows.Forms.NumericUpDown N1;
-        private System.Windows.Forms.NumericUpDown N2;
-        private System.Windows.Forms.NumericUpDown N3;
+        private System.Windows.Forms.TextBox txtF1;
+        private System.Windows.Forms.TextBox txtF2;
+        private System.Windows.Forms.TextBox txtF3;
     }
 }

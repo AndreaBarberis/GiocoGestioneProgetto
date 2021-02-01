@@ -274,7 +274,7 @@
             this.Controls.Add(this.pictureBox1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "frmSelezionePersonaggio";
-            this.Text = "Form1";
+            this.Text = "frmSelezionePersonaggio";
             ((System.ComponentModel.ISupportInitialize)(this.pbReAp)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbKaiser)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbZar)).EndInit();

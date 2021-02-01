@@ -17,6 +17,7 @@ namespace WindowsFormsApp1
         int cmbUtente = 2;
         int discUtente = 2;
         int trnUtente = 3;
+        int ptnAzioni=0;
         int qtaBot = 3000000;
         int cmbBot = 2;
         int discBot = 2;
@@ -76,6 +77,59 @@ namespace WindowsFormsApp1
         private void frmCampoGioco_FormClosing(object sender, FormClosingEventArgs e)
         {
             playlist.Stop();
+        }
+
+        private void btnAzioni_Click(object sender, EventArgs e)
+        {
+            frmAzioni A = new frmAzioni(ptnAzioni);
+            A.ShowDialog();
+            string az = A.azione();
+            if(az=="disc")
+            {
+                if(cmbUtente<3)
+                {
+                    cmbUtente += 1;
+                }
+                if(discUtente<3)
+                {
+                    discUtente += 1;
+                }
+                switch (cmbUtente)
+                {
+                    case 1:
+                        txtComb.Text = "Bassa";
+                        break;
+                    case 2:
+                        txtComb.Text = "Nella media";
+                        break;
+                    case 3:
+                        txtComb.Text = "Alta";
+                        break;
+                    default:
+                        break;
+                }
+                switch (discUtente)
+                {
+                    case 1:
+                        txtDisc.Text = "Bassa";
+                        break;
+                    case 2:
+                        txtDisc.Text = "Nella media";
+                        break;
+                    case 3:
+                        txtDisc.Text = "Alta";
+                        break;
+                    default:
+                        break;
+                }
+            }
+            else
+            {
+                if(az=="treno")
+                {
+                    trnBot += 2;
+                }
+            }
         }
     }
 }
