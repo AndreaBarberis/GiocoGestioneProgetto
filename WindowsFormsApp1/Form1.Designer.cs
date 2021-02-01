@@ -112,7 +112,7 @@
             // 
             // brnRe
             // 
-            this.brnRe.Location = new System.Drawing.Point(21, 242);
+            this.brnRe.Location = new System.Drawing.Point(89, 242);
             this.brnRe.Name = "brnRe";
             this.brnRe.Size = new System.Drawing.Size(75, 23);
             this.brnRe.TabIndex = 11;
@@ -212,7 +212,7 @@
             // 
             this.pictureBox1.BackgroundImage = global::WindowsFormsApp1.Properties.Resources.Re_Vittorio_Emanuele_III;
             this.pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.pictureBox1.Location = new System.Drawing.Point(21, 40);
+            this.pictureBox1.Location = new System.Drawing.Point(62, 40);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(138, 183);
             this.pictureBox1.TabIndex = 0;
@@ -222,7 +222,7 @@
             // 
             // btnInfo
             // 
-            this.btnInfo.Location = new System.Drawing.Point(12, 367);
+            this.btnInfo.Location = new System.Drawing.Point(24, 411);
             this.btnInfo.Name = "btnInfo";
             this.btnInfo.Size = new System.Drawing.Size(96, 69);
             this.btnInfo.TabIndex = 16;
@@ -240,7 +240,7 @@
             // 
             // btnExtra
             // 
-            this.btnExtra.Location = new System.Drawing.Point(688, 390);
+            this.btnExtra.Location = new System.Drawing.Point(688, 411);
             this.btnExtra.Name = "btnExtra";
             this.btnExtra.Size = new System.Drawing.Size(75, 62);
             this.btnExtra.TabIndex = 18;
@@ -252,7 +252,9 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 489);
+            this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
+            this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.ClientSize = new System.Drawing.Size(800, 502);
             this.Controls.Add(this.btnExtra);
             this.Controls.Add(this.label7);
             this.Controls.Add(this.btnInfo);

@@ -244,6 +244,7 @@
             this.BackgroundImage = global::WindowsFormsApp1.Properties.Resources.WWOne09;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(915, 518);
+            this.ControlBox = false;
             this.Controls.Add(this.txtF3);
             this.Controls.Add(this.txtF2);
             this.Controls.Add(this.txtF1);
