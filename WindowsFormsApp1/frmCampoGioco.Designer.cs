@@ -36,7 +36,7 @@
             this.label2 = new System.Windows.Forms.Label();
             this.txtComb = new System.Windows.Forms.TextBox();
             this.lstMessaggi = new System.Windows.Forms.ListBox();
-            this.btnAttacca = new System.Windows.Forms.Button();
+            this.btnSposta = new System.Windows.Forms.Button();
             this.btnBonus = new System.Windows.Forms.Button();
             this.btnAzioni = new System.Windows.Forms.Button();
             this.btnEsci = new System.Windows.Forms.Button();
@@ -120,17 +120,17 @@
             this.lstMessaggi.Size = new System.Drawing.Size(578, 95);
             this.lstMessaggi.TabIndex = 6;
             // 
-            // btnAttacca
+            // btnSposta
             // 
-            this.btnAttacca.BackColor = System.Drawing.Color.YellowGreen;
-            this.btnAttacca.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnAttacca.ForeColor = System.Drawing.SystemColors.HighlightText;
-            this.btnAttacca.Location = new System.Drawing.Point(200, 330);
-            this.btnAttacca.Name = "btnAttacca";
-            this.btnAttacca.Size = new System.Drawing.Size(151, 38);
-            this.btnAttacca.TabIndex = 7;
-            this.btnAttacca.Text = "assalta";
-            this.btnAttacca.UseVisualStyleBackColor = false;
+            this.btnSposta.BackColor = System.Drawing.Color.YellowGreen;
+            this.btnSposta.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSposta.ForeColor = System.Drawing.SystemColors.HighlightText;
+            this.btnSposta.Location = new System.Drawing.Point(200, 330);
+            this.btnSposta.Name = "btnSposta";
+            this.btnSposta.Size = new System.Drawing.Size(151, 38);
+            this.btnSposta.TabIndex = 7;
+            this.btnSposta.Text = "sposta";
+            this.btnSposta.UseVisualStyleBackColor = false;
             // 
             // btnBonus
             // 
@@ -215,6 +215,7 @@
             // 
             // txtF1
             // 
+            this.txtF1.Enabled = false;
             this.txtF1.Location = new System.Drawing.Point(191, 95);
             this.txtF1.Name = "txtF1";
             this.txtF1.Size = new System.Drawing.Size(100, 20);
@@ -222,6 +223,7 @@
             // 
             // txtF2
             // 
+            this.txtF2.Enabled = false;
             this.txtF2.Location = new System.Drawing.Point(353, 199);
             this.txtF2.Name = "txtF2";
             this.txtF2.Size = new System.Drawing.Size(100, 20);
@@ -229,6 +231,7 @@
             // 
             // txtF3
             // 
+            this.txtF3.Enabled = false;
             this.txtF3.Location = new System.Drawing.Point(597, 278);
             this.txtF3.Name = "txtF3";
             this.txtF3.Size = new System.Drawing.Size(100, 20);
@@ -251,7 +254,7 @@
             this.Controls.Add(this.btnEsci);
             this.Controls.Add(this.btnAzioni);
             this.Controls.Add(this.btnBonus);
-            this.Controls.Add(this.btnAttacca);
+            this.Controls.Add(this.btnSposta);
             this.Controls.Add(this.lstMessaggi);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.txtComb);
@@ -280,7 +283,7 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.TextBox txtComb;
         private System.Windows.Forms.ListBox lstMessaggi;
-        private System.Windows.Forms.Button btnAttacca;
+        private System.Windows.Forms.Button btnSposta;
         private System.Windows.Forms.Button btnBonus;
         private System.Windows.Forms.Button btnAzioni;
         private System.Windows.Forms.Button btnEsci;

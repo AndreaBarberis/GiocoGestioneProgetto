@@ -35,6 +35,7 @@
             this.richTextBox1 = new System.Windows.Forms.RichTextBox();
             this.richTextBox2 = new System.Windows.Forms.RichTextBox();
             this.richTextBox3 = new System.Windows.Forms.RichTextBox();
+            this.btnEsci = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // btnDisc
@@ -96,6 +97,19 @@
             this.richTextBox3.TabIndex = 5;
             this.richTextBox3.Text = "Le nostre spie cercheranno di ottenere informazioni sull\'esercito nemico";
             // 
+            // btnEsci
+            // 
+            this.btnEsci.BackColor = System.Drawing.Color.Red;
+            this.btnEsci.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnEsci.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.btnEsci.Location = new System.Drawing.Point(51, 372);
+            this.btnEsci.Name = "btnEsci";
+            this.btnEsci.Size = new System.Drawing.Size(345, 43);
+            this.btnEsci.TabIndex = 6;
+            this.btnEsci.Text = "esci";
+            this.btnEsci.UseVisualStyleBackColor = false;
+            this.btnEsci.Click += new System.EventHandler(this.btnEsci_Click);
+            // 
             // frmAzioni
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -103,6 +117,7 @@
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(476, 460);
+            this.Controls.Add(this.btnEsci);
             this.Controls.Add(this.richTextBox3);
             this.Controls.Add(this.richTextBox2);
             this.Controls.Add(this.richTextBox1);
@@ -113,6 +128,7 @@
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "frmAzioni";
             this.Text = "frmAzioni";
+            this.Load += new System.EventHandler(this.frmAzioni_Load);
             this.ResumeLayout(false);
 
         }
@@ -125,5 +141,6 @@
         private System.Windows.Forms.RichTextBox richTextBox1;
         private System.Windows.Forms.RichTextBox richTextBox2;
         private System.Windows.Forms.RichTextBox richTextBox3;
+        private System.Windows.Forms.Button btnEsci;
     }
 }

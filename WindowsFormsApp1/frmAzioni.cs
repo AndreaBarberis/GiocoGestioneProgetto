@@ -13,7 +13,7 @@ namespace WindowsFormsApp1
     public partial class frmAzioni : Form
     {
         string az;
-        int ptn =0;
+        int puntiAz;
         public frmAzioni()
         {
             InitializeComponent();
@@ -21,8 +21,41 @@ namespace WindowsFormsApp1
         public frmAzioni(int punti)
         {
             InitializeComponent();
-            ptn += punti;
-            switch (ptn)
+            puntiAz = punti;
+           
+        }
+        public string azione()
+        {
+            return az;
+        }
+        public int punti()
+        {
+            return puntiAz;
+        }
+        private void btnDisc_Click(object sender, EventArgs e)
+        {
+            az = "disc";
+            puntiAz -= 1;
+            this.Close();
+        }
+
+        private void btnTre_Click(object sender, EventArgs e)
+        {
+            az = "treno";
+            puntiAz -= 2;
+            this.Close();
+        }
+
+        private void btnSpia_Click(object sender, EventArgs e)
+        {
+            az = "spia";
+            puntiAz -= 3;
+            this.Close();
+        }
+
+        private void frmAzioni_Load(object sender, EventArgs e)
+        {
+            switch (puntiAz)
             {
                 case 1:
                     btnDisc.Enabled = true;
@@ -40,31 +73,16 @@ namespace WindowsFormsApp1
                     btnTre.Enabled = true;
                     break;
                 default:
+                    btnDisc.Enabled = false;
+                    btnSpia.Enabled = false;
+                    btnTre.Enabled = false;
                     break;
             }
         }
-        public string azione()
-        {
-            return az;
-        }
-        private void btnDisc_Click(object sender, EventArgs e)
-        {
-            az = "disc";
-            ptn -= 1;
-            this.Close();
-        }
 
-        private void btnTre_Click(object sender, EventArgs e)
+        private void btnEsci_Click(object sender, EventArgs e)
         {
-            az = "treno";
-            ptn -= 2;
-            this.Close();
-        }
-
-        private void btnSpia_Click(object sender, EventArgs e)
-        {
-            az = "spia";
-            ptn -= 3;
+            az = "";
             this.Close();
         }
     }

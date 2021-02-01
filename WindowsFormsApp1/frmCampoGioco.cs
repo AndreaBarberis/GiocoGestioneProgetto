@@ -47,6 +47,9 @@ namespace WindowsFormsApp1
                 txtComb.Text = "Nella media";
                 txtDisc.Text = "Nella media";
             }
+            txtF1.Text = (qtaUtente / 3).ToString();
+            txtF2.Text = (qtaUtente / 3).ToString();
+            txtF3.Text = (qtaUtente / 3).ToString();
         }
 
         private void frmCampoGioco_Load(object sender, EventArgs e)
@@ -84,6 +87,7 @@ namespace WindowsFormsApp1
             frmAzioni A = new frmAzioni(ptnAzioni);
             A.ShowDialog();
             string az = A.azione();
+            ptnAzioni = A.punti();
             if(az=="disc")
             {
                 if(cmbUtente<3)
