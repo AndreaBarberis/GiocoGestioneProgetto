@@ -35,21 +35,22 @@ namespace WindowsFormsApp1
             bonus = typeBonus;
             if(bonus=="iniz")
             {
-                qtaUtente += 500000;
-                txtTruppeDisponibili.Text = qtaUtente.ToString();
+                txtTruppeDisponibili.Text = 500000.ToString();
                 discUtente = 1;
                 txtDisc.Text = "Bassa";
                 txtComb.Text = "nella media";
+               
             }
             else
             {
-                txtTruppeDisponibili.Text = qtaUtente.ToString();
+                txtTruppeDisponibili.Text = 0.ToString();
                 txtComb.Text = "Nella media";
                 txtDisc.Text = "Nella media";
             }
             txtF1.Text = (qtaUtente / 3).ToString();
             txtF2.Text = (qtaUtente / 3).ToString();
             txtF3.Text = (qtaUtente / 3).ToString();
+
         }
 
         private void frmCampoGioco_Load(object sender, EventArgs e)
