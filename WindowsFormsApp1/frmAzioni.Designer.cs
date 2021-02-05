@@ -75,8 +75,7 @@
             this.richTextBox1.Name = "richTextBox1";
             this.richTextBox1.Size = new System.Drawing.Size(209, 41);
             this.richTextBox1.TabIndex = 3;
-            this.richTextBox1.Text = "Il discorso patriottico del capo dello stato aumenta la disciplina e combattività" +
-    "";
+            this.richTextBox1.Text = "Il discorso patriottico del capo di stato aumenta la disciplina e combattività";
             // 
             // richTextBox2
             // 
