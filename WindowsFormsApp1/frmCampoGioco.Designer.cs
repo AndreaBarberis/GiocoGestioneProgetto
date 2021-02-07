@@ -40,13 +40,21 @@
             this.btnBonus = new System.Windows.Forms.Button();
             this.btnAzioni = new System.Windows.Forms.Button();
             this.btnEsci = new System.Windows.Forms.Button();
-            this.textBox3 = new System.Windows.Forms.TextBox();
+            this.txtSelezRiserve = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.btnOpzioni = new System.Windows.Forms.Button();
             this.txtF1 = new System.Windows.Forms.TextBox();
             this.txtF2 = new System.Windows.Forms.TextBox();
             this.txtF3 = new System.Windows.Forms.TextBox();
+            this.lbl1 = new System.Windows.Forms.Label();
+            this.lbl2 = new System.Windows.Forms.Label();
+            this.lbl3 = new System.Windows.Forms.Label();
+            this.txtFronte = new System.Windows.Forms.TextBox();
+            this.label5 = new System.Windows.Forms.Label();
+            this.label6 = new System.Windows.Forms.Label();
+            this.label7 = new System.Windows.Forms.Label();
+            this.label8 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // txtTruppeDisponibili
@@ -127,17 +135,18 @@
             this.btnSposta.ForeColor = System.Drawing.SystemColors.HighlightText;
             this.btnSposta.Location = new System.Drawing.Point(200, 330);
             this.btnSposta.Name = "btnSposta";
-            this.btnSposta.Size = new System.Drawing.Size(151, 38);
+            this.btnSposta.Size = new System.Drawing.Size(91, 38);
             this.btnSposta.TabIndex = 7;
             this.btnSposta.Text = "sposta";
             this.btnSposta.UseVisualStyleBackColor = false;
+            this.btnSposta.Click += new System.EventHandler(this.btnSposta_Click);
             // 
             // btnBonus
             // 
             this.btnBonus.BackColor = System.Drawing.Color.Turquoise;
             this.btnBonus.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnBonus.ForeColor = System.Drawing.SystemColors.HighlightText;
-            this.btnBonus.Location = new System.Drawing.Point(406, 330);
+            this.btnBonus.Location = new System.Drawing.Point(454, 330);
             this.btnBonus.Name = "btnBonus";
             this.btnBonus.Size = new System.Drawing.Size(137, 38);
             this.btnBonus.TabIndex = 8;
@@ -149,7 +158,7 @@
             this.btnAzioni.BackColor = System.Drawing.Color.SandyBrown;
             this.btnAzioni.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnAzioni.ForeColor = System.Drawing.SystemColors.HighlightText;
-            this.btnAzioni.Location = new System.Drawing.Point(597, 330);
+            this.btnAzioni.Location = new System.Drawing.Point(617, 330);
             this.btnAzioni.Name = "btnAzioni";
             this.btnAzioni.Size = new System.Drawing.Size(137, 38);
             this.btnAzioni.TabIndex = 9;
@@ -170,14 +179,14 @@
             this.btnEsci.UseVisualStyleBackColor = false;
             this.btnEsci.Click += new System.EventHandler(this.btnEsci_Click);
             // 
-            // textBox3
+            // txtSelezRiserve
             // 
-            this.textBox3.BackColor = System.Drawing.SystemColors.HotTrack;
-            this.textBox3.ForeColor = System.Drawing.SystemColors.Window;
-            this.textBox3.Location = new System.Drawing.Point(200, 304);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(151, 20);
-            this.textBox3.TabIndex = 11;
+            this.txtSelezRiserve.BackColor = System.Drawing.SystemColors.HotTrack;
+            this.txtSelezRiserve.ForeColor = System.Drawing.SystemColors.Window;
+            this.txtSelezRiserve.Location = new System.Drawing.Point(200, 304);
+            this.txtSelezRiserve.Name = "txtSelezRiserve";
+            this.txtSelezRiserve.Size = new System.Drawing.Size(91, 20);
+            this.txtSelezRiserve.TabIndex = 11;
             // 
             // label3
             // 
@@ -237,6 +246,80 @@
             this.txtF3.Size = new System.Drawing.Size(100, 20);
             this.txtF3.TabIndex = 17;
             // 
+            // lbl1
+            // 
+            this.lbl1.AutoSize = true;
+            this.lbl1.Location = new System.Drawing.Point(275, 60);
+            this.lbl1.Name = "lbl1";
+            this.lbl1.Size = new System.Drawing.Size(16, 13);
+            this.lbl1.TabIndex = 18;
+            this.lbl1.Text = "---";
+            // 
+            // lbl2
+            // 
+            this.lbl2.AutoSize = true;
+            this.lbl2.Location = new System.Drawing.Point(403, 159);
+            this.lbl2.Name = "lbl2";
+            this.lbl2.Size = new System.Drawing.Size(16, 13);
+            this.lbl2.TabIndex = 19;
+            this.lbl2.Text = "---";
+            // 
+            // lbl3
+            // 
+            this.lbl3.AutoSize = true;
+            this.lbl3.Location = new System.Drawing.Point(631, 245);
+            this.lbl3.Name = "lbl3";
+            this.lbl3.Size = new System.Drawing.Size(16, 13);
+            this.lbl3.TabIndex = 20;
+            this.lbl3.Text = "---";
+            // 
+            // txtFronte
+            // 
+            this.txtFronte.Location = new System.Drawing.Point(300, 345);
+            this.txtFronte.Name = "txtFronte";
+            this.txtFronte.Size = new System.Drawing.Size(101, 20);
+            this.txtFronte.TabIndex = 21;
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(297, 329);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(104, 13);
+            this.label5.TabIndex = 22;
+            this.label5.Text = "fronte dove spostare";
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.BackColor = System.Drawing.SystemColors.Highlight;
+            this.label6.Location = new System.Drawing.Point(117, 75);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(61, 13);
+            this.label6.TabIndex = 23;
+            this.label6.Text = "Fronte nord";
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.BackColor = System.Drawing.SystemColors.Highlight;
+            this.label7.Location = new System.Drawing.Point(275, 178);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(75, 13);
+            this.label7.TabIndex = 24;
+            this.label7.Text = "fronte centrale";
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.BackColor = System.Drawing.SystemColors.Highlight;
+            this.label8.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.label8.Location = new System.Drawing.Point(523, 260);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(54, 13);
+            this.label8.TabIndex = 25;
+            this.label8.Text = "fronte sud";
+            // 
             // frmCampoGioco
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -245,13 +328,21 @@
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(915, 518);
             this.ControlBox = false;
+            this.Controls.Add(this.label8);
+            this.Controls.Add(this.label7);
+            this.Controls.Add(this.label6);
+            this.Controls.Add(this.label5);
+            this.Controls.Add(this.txtFronte);
+            this.Controls.Add(this.lbl3);
+            this.Controls.Add(this.lbl2);
+            this.Controls.Add(this.lbl1);
             this.Controls.Add(this.txtF3);
             this.Controls.Add(this.txtF2);
             this.Controls.Add(this.txtF1);
             this.Controls.Add(this.btnOpzioni);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
-            this.Controls.Add(this.textBox3);
+            this.Controls.Add(this.txtSelezRiserve);
             this.Controls.Add(this.btnEsci);
             this.Controls.Add(this.btnAzioni);
             this.Controls.Add(this.btnBonus);
@@ -288,12 +379,20 @@
         private System.Windows.Forms.Button btnBonus;
         private System.Windows.Forms.Button btnAzioni;
         private System.Windows.Forms.Button btnEsci;
-        private System.Windows.Forms.TextBox textBox3;
+        private System.Windows.Forms.TextBox txtSelezRiserve;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Button btnOpzioni;
         private System.Windows.Forms.TextBox txtF1;
         private System.Windows.Forms.TextBox txtF2;
         private System.Windows.Forms.TextBox txtF3;
+        private System.Windows.Forms.Label lbl1;
+        private System.Windows.Forms.Label lbl2;
+        private System.Windows.Forms.Label lbl3;
+        private System.Windows.Forms.TextBox txtFronte;
+        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.Label label8;
     }
 }

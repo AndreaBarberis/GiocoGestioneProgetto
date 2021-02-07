@@ -14,14 +14,19 @@ namespace WindowsFormsApp1
     public partial class frmCampoGioco : Form
     {
         int qtaUtente = 3000000;
+        int qtaRiservaUtente = 0;
         int cmbUtente = 2;
         int discUtente = 2;
         int trnUtente = 3;
         int ptnAzioni=0;
         int qtaBot = 3000000;
+        int F1 = 1000000;
+        int F2 = 1000000;
+        int F3 = 1000000;
         int cmbBot = 2;
         int discBot = 2;
         int trnBot = 3;
+        int trnBotMalus = 2;
         string bonus;
         SoundPlayer playlist = new SoundPlayer(@"playlist.wav");
         int sound = 1;
@@ -134,6 +139,34 @@ namespace WindowsFormsApp1
                 {
                     trnBot += 2;
                 }
+                else if(az=="spia")
+                {
+                    lbl1.Text = F1.ToString();
+                    lbl2.Text = F2.ToString();
+                    lbl3.Text = F3.ToString();
+                }
+            }
+        }
+
+        private void btnSposta_Click(object sender, EventArgs e)
+        {
+            switch (txtFronte.Text)
+            {
+                case "nord":
+                    txtF1.Text = (Convert.ToInt32(txtF1.Text) + Convert.ToInt32(txtSelezRiserve.Text)).ToString();
+                    lstMessaggi.Items.Add("Sono state spostate "+txtSelezRiserve.Text+" truppe al Fronte nord");
+                    break;
+                case "centro":
+                    txtF2.Text = (Convert.ToInt32(txtF2.Text) + Convert.ToInt32(txtSelezRiserve.Text)).ToString();
+                    lstMessaggi.Items.Add("Sono state spostate " + txtSelezRiserve.Text + " truppe al Fronte centrale");
+                    break;
+                case "sud":
+                    txtF3.Text = (Convert.ToInt32(txtF3.Text) + Convert.ToInt32(txtSelezRiserve.Text)).ToString();
+                    lstMessaggi.Items.Add("Sono state spostate " + txtSelezRiserve.Text + " truppe al Fronte sud");
+                    break;
+                default:
+                    MessageBox.Show("Selezionare fronte: nord - centro - sud");
+                    break;
             }
         }
     }
