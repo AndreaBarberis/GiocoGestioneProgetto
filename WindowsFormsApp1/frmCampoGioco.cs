@@ -13,22 +13,25 @@ namespace WindowsFormsApp1
 {
     public partial class frmCampoGioco : Form
     {
-        int qtaUtente = 3000000;
-        int qtaRiservaUtente = 0;
-        int cmbUtente = 2;
-        int discUtente = 2;
-        int trnUtente = 3;
-        int ptnAzioni=0;
-        int UtBonus = 3;
-        int qtaBot = 3000000;
-        int F1 = 1000000;
-        int F2 = 1000000;
-        int F3 = 1000000;
-        int cmbBot = 2;
-        int discBot = 2;
-        int trnBot = 3;
-        int trnBotMalus = 2;
-        string bonus;
+        /*VARIABILI DELL'UTENTE*/
+        int qtaUtente = 3000000; //quantità truppe in generale
+        int qtaRiservaUtente = 0; //quantità truppe in riserva
+        int cmbUtente = 2; //combattività utente
+        int discUtente = 2; //disciplina utente
+        int trnUtente = 3; //turni x rifornimento ad utente
+        int ptnAzioni=0; //punti azioni utente
+        int UtBonus = 3; //utilizzato per il bonus di Vittorio Emanuele
+        string bonus; //per sapere il bonus scelto dall'utente
+        /*VARIABILI BOT*/
+        int qtaBot = 3000000; //quantità truppe in generale
+        int fNord = 1000000; //quantità truppe fronte nord
+        int fCentro = 1000000; //quantità truppe fronte centrale
+        int fSud = 1000000; //quantità truppe fronte sud
+        int cmbBot = 2; //combattività bot
+        int discBot = 2; //disciplina bot
+        int trnBot = 3; //turni x rifornimento bot
+        int trnBotMalus = 2; //contatore per il malus dei turni del bot dopo aver selezzionato l'azione di sabotaggio
+        
         SoundPlayer playlist = new SoundPlayer(@"playlist.wav");
         int sound = 3;
         public frmCampoGioco()
@@ -144,9 +147,9 @@ namespace WindowsFormsApp1
                 }
                 else if(az=="spia")
                 {
-                    lbl1.Text = F1.ToString();
-                    lbl2.Text = F2.ToString();
-                    lbl3.Text = F3.ToString();
+                    lbl1.Text = fNord.ToString();
+                    lbl2.Text = fCentro.ToString();
+                    lbl3.Text = fSud.ToString();
                     lstMessaggi.Items.Add("Truppe nemiche ora visibili su mappa");
                 }
             }
@@ -161,15 +164,21 @@ namespace WindowsFormsApp1
                     case "nord":
                         txtF1.Text = (Convert.ToInt32(txtF1.Text) + Convert.ToInt32(txtSelezRiserve.Text)).ToString();
                         lstMessaggi.Items.Add("Sono state spostate " + txtSelezRiserve.Text + " truppe al Fronte nord");
+                        qtaRiservaUtente = qtaRiservaUtente - Convert.ToInt32(txtSelezRiserve.Text);
                         txtTruppeDisponibili.Text = (Convert.ToInt32(txtTruppeDisponibili.Text)-Convert.ToInt64(txtSelezRiserve.Text)).ToString();
                         break;
                     case "centro":
                         txtF2.Text = (Convert.ToInt32(txtF2.Text) + Convert.ToInt32(txtSelezRiserve.Text)).ToString();
                         lstMessaggi.Items.Add("Sono state spostate " + txtSelezRiserve.Text + " truppe al Fronte centrale");
+                        qtaRiservaUtente = qtaRiservaUtente - Convert.ToInt32(txtSelezRiserve.Text);
+                        txtTruppeDisponibili.Text = (Convert.ToInt32(txtTruppeDisponibili.Text) - Convert.ToInt64(txtSelezRiserve.Text)).ToString();
                         break;
                     case "sud":
                         txtF3.Text = (Convert.ToInt32(txtF3.Text) + Convert.ToInt32(txtSelezRiserve.Text)).ToString();
                         lstMessaggi.Items.Add("Sono state spostate " + txtSelezRiserve.Text + " truppe al Fronte sud");
+                        qtaRiservaUtente = qtaRiservaUtente - Convert.ToInt32(txtSelezRiserve.Text);
+                        txtTruppeDisponibili.Text = (Convert.ToInt32(txtTruppeDisponibili.Text) - Convert.ToInt64(txtSelezRiserve.Text)).ToString();
+                        
                         break;
                     default:
                         MessageBox.Show("Selezionare fronte: nord - centro - sud");
