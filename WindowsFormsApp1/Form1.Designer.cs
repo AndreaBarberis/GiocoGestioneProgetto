@@ -104,11 +104,11 @@
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(470, 439);
+            this.label6.Location = new System.Drawing.Point(453, 439);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(169, 13);
+            this.label6.Size = new System.Drawing.Size(157, 13);
             this.label6.TabIndex = 10;
-            this.label6.Text = "Francesco Giuseppe: +2 disciplina";
+            this.label6.Text = "Francesco Giuseppe: +1 azione";
             // 
             // brnRe
             // 
@@ -152,7 +152,7 @@
             // 
             // btnReAp
             // 
-            this.btnReAp.Location = new System.Drawing.Point(473, 454);
+            this.btnReAp.Location = new System.Drawing.Point(473, 457);
             this.btnReAp.Name = "btnReAp";
             this.btnReAp.Size = new System.Drawing.Size(127, 23);
             this.btnReAp.TabIndex = 15;
@@ -222,17 +222,19 @@
             // 
             // btnInfo
             // 
-            this.btnInfo.Location = new System.Drawing.Point(24, 411);
+            this.btnInfo.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnInfo.Location = new System.Drawing.Point(12, 402);
             this.btnInfo.Name = "btnInfo";
-            this.btnInfo.Size = new System.Drawing.Size(96, 69);
+            this.btnInfo.Size = new System.Drawing.Size(160, 88);
             this.btnInfo.TabIndex = 16;
             this.btnInfo.Text = "Come si gioca";
             this.btnInfo.UseVisualStyleBackColor = true;
+            this.btnInfo.Click += new System.EventHandler(this.btnInfo_Click);
             // 
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(9, 331);
+            this.label7.Location = new System.Drawing.Point(9, 377);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(171, 13);
             this.label7.TabIndex = 17;
@@ -277,6 +279,7 @@
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "frmSelezionePersonaggio";
             this.Text = "frmSelezionePersonaggio";
+            this.Load += new System.EventHandler(this.frmSelezionePersonaggio_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pbReAp)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbKaiser)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbZar)).EndInit();

@@ -55,6 +55,8 @@
             this.label6 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
+            this.btnAssalta = new System.Windows.Forms.Button();
+            this.btnPassa = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // txtTruppeDisponibili
@@ -146,9 +148,9 @@
             this.btnBonus.BackColor = System.Drawing.Color.Turquoise;
             this.btnBonus.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnBonus.ForeColor = System.Drawing.SystemColors.HighlightText;
-            this.btnBonus.Location = new System.Drawing.Point(454, 330);
+            this.btnBonus.Location = new System.Drawing.Point(597, 339);
             this.btnBonus.Name = "btnBonus";
-            this.btnBonus.Size = new System.Drawing.Size(137, 38);
+            this.btnBonus.Size = new System.Drawing.Size(75, 38);
             this.btnBonus.TabIndex = 8;
             this.btnBonus.Text = "usa bonus";
             this.btnBonus.UseVisualStyleBackColor = false;
@@ -158,9 +160,9 @@
             this.btnAzioni.BackColor = System.Drawing.Color.SandyBrown;
             this.btnAzioni.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnAzioni.ForeColor = System.Drawing.SystemColors.HighlightText;
-            this.btnAzioni.Location = new System.Drawing.Point(617, 330);
+            this.btnAzioni.Location = new System.Drawing.Point(678, 339);
             this.btnAzioni.Name = "btnAzioni";
-            this.btnAzioni.Size = new System.Drawing.Size(137, 38);
+            this.btnAzioni.Size = new System.Drawing.Size(76, 38);
             this.btnAzioni.TabIndex = 9;
             this.btnAzioni.Text = "azioni";
             this.btnAzioni.UseVisualStyleBackColor = false;
@@ -277,7 +279,7 @@
             // 
             this.txtFronte.Location = new System.Drawing.Point(300, 345);
             this.txtFronte.Name = "txtFronte";
-            this.txtFronte.Size = new System.Drawing.Size(101, 20);
+            this.txtFronte.Size = new System.Drawing.Size(148, 20);
             this.txtFronte.TabIndex = 21;
             // 
             // label5
@@ -285,9 +287,9 @@
             this.label5.AutoSize = true;
             this.label5.Location = new System.Drawing.Point(297, 329);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(104, 13);
+            this.label5.Size = new System.Drawing.Size(151, 13);
             this.label5.TabIndex = 22;
-            this.label5.Text = "fronte dove spostare";
+            this.label5.Text = "fronte dove spostare/assaltare";
             // 
             // label6
             // 
@@ -320,6 +322,28 @@
             this.label8.TabIndex = 25;
             this.label8.Text = "fronte sud";
             // 
+            // btnAssalta
+            // 
+            this.btnAssalta.BackColor = System.Drawing.Color.Blue;
+            this.btnAssalta.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.btnAssalta.Location = new System.Drawing.Point(467, 339);
+            this.btnAssalta.Name = "btnAssalta";
+            this.btnAssalta.Size = new System.Drawing.Size(124, 38);
+            this.btnAssalta.TabIndex = 26;
+            this.btnAssalta.Text = "assalta";
+            this.btnAssalta.UseVisualStyleBackColor = false;
+            // 
+            // btnPassa
+            // 
+            this.btnPassa.BackColor = System.Drawing.Color.Crimson;
+            this.btnPassa.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.btnPassa.Location = new System.Drawing.Point(760, 318);
+            this.btnPassa.Name = "btnPassa";
+            this.btnPassa.Size = new System.Drawing.Size(125, 47);
+            this.btnPassa.TabIndex = 27;
+            this.btnPassa.Text = "passa turno";
+            this.btnPassa.UseVisualStyleBackColor = false;
+            // 
             // frmCampoGioco
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -328,6 +352,8 @@
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(915, 518);
             this.ControlBox = false;
+            this.Controls.Add(this.btnPassa);
+            this.Controls.Add(this.btnAssalta);
             this.Controls.Add(this.label8);
             this.Controls.Add(this.label7);
             this.Controls.Add(this.label6);
@@ -394,5 +420,7 @@
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.Button btnAssalta;
+        private System.Windows.Forms.Button btnPassa;
     }
 }

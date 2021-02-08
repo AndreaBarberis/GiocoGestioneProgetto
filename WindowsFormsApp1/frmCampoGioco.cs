@@ -55,6 +55,10 @@ namespace WindowsFormsApp1
             txtF1.Text = (qtaUtente / 3).ToString();
             txtF2.Text = (qtaUtente / 3).ToString();
             txtF3.Text = (qtaUtente / 3).ToString();
+            if(bonus=="az")
+            {
+                ptnAzioni = 1;
+            }
 
         }
 
@@ -150,24 +154,32 @@ namespace WindowsFormsApp1
 
         private void btnSposta_Click(object sender, EventArgs e)
         {
-            switch (txtFronte.Text)
+            if(Convert.ToInt32(txtSelezRiserve.Text)<=Convert.ToInt32(txtTruppeDisponibili.Text))
             {
-                case "nord":
-                    txtF1.Text = (Convert.ToInt32(txtF1.Text) + Convert.ToInt32(txtSelezRiserve.Text)).ToString();
-                    lstMessaggi.Items.Add("Sono state spostate "+txtSelezRiserve.Text+" truppe al Fronte nord");
-                    break;
-                case "centro":
-                    txtF2.Text = (Convert.ToInt32(txtF2.Text) + Convert.ToInt32(txtSelezRiserve.Text)).ToString();
-                    lstMessaggi.Items.Add("Sono state spostate " + txtSelezRiserve.Text + " truppe al Fronte centrale");
-                    break;
-                case "sud":
-                    txtF3.Text = (Convert.ToInt32(txtF3.Text) + Convert.ToInt32(txtSelezRiserve.Text)).ToString();
-                    lstMessaggi.Items.Add("Sono state spostate " + txtSelezRiserve.Text + " truppe al Fronte sud");
-                    break;
-                default:
-                    MessageBox.Show("Selezionare fronte: nord - centro - sud");
-                    break;
+                switch (txtFronte.Text)
+                {
+                    case "nord":
+                        txtF1.Text = (Convert.ToInt32(txtF1.Text) + Convert.ToInt32(txtSelezRiserve.Text)).ToString();
+                        lstMessaggi.Items.Add("Sono state spostate " + txtSelezRiserve.Text + " truppe al Fronte nord");
+                        break;
+                    case "centro":
+                        txtF2.Text = (Convert.ToInt32(txtF2.Text) + Convert.ToInt32(txtSelezRiserve.Text)).ToString();
+                        lstMessaggi.Items.Add("Sono state spostate " + txtSelezRiserve.Text + " truppe al Fronte centrale");
+                        break;
+                    case "sud":
+                        txtF3.Text = (Convert.ToInt32(txtF3.Text) + Convert.ToInt32(txtSelezRiserve.Text)).ToString();
+                        lstMessaggi.Items.Add("Sono state spostate " + txtSelezRiserve.Text + " truppe al Fronte sud");
+                        break;
+                    default:
+                        MessageBox.Show("Selezionare fronte: nord - centro - sud");
+                        break;
+                }
             }
+            else
+            {
+                MessageBox.Show("Quantità truppe non disponibile");
+            }
+          
         }
     }
 }

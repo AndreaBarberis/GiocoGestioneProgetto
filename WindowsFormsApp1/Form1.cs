@@ -49,7 +49,7 @@ namespace WindowsFormsApp1
 
         private void btnReAp_Click(object sender, EventArgs e)
         {
-            frmCampoGioco f = new frmCampoGioco("disc");
+            frmCampoGioco f = new frmCampoGioco("az");
             f.ShowDialog();
         }
 
@@ -156,6 +156,17 @@ namespace WindowsFormsApp1
         {
             frmExtra f = new frmExtra();
             f.Show();
+        }
+
+        private void frmSelezionePersonaggio_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnInfo_Click(object sender, EventArgs e)
+        {
+            System.Diagnostics.Process.Start("istruzioni.pdf");
+
         }
     }
 }
