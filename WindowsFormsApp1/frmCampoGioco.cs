@@ -41,6 +41,7 @@ namespace WindowsFormsApp1
             if(bonus=="iniz")
             {
                 txtTruppeDisponibili.Text = 500000.ToString();
+                qtaRiservaUtente = Convert.ToInt32(txtTruppeDisponibili.Text);
                 discUtente = 1;
                 txtDisc.Text = "Bassa";
                 txtComb.Text = "nella media";
@@ -161,6 +162,7 @@ namespace WindowsFormsApp1
                     case "nord":
                         txtF1.Text = (Convert.ToInt32(txtF1.Text) + Convert.ToInt32(txtSelezRiserve.Text)).ToString();
                         lstMessaggi.Items.Add("Sono state spostate " + txtSelezRiserve.Text + " truppe al Fronte nord");
+                        txtTruppeDisponibili.Text = (Convert.ToInt32(txtTruppeDisponibili.Text)-Convert.ToInt64(txtSelezRiserve.Text)).ToString();
                         break;
                     case "centro":
                         txtF2.Text = (Convert.ToInt32(txtF2.Text) + Convert.ToInt32(txtSelezRiserve.Text)).ToString();
@@ -180,6 +182,43 @@ namespace WindowsFormsApp1
                 MessageBox.Show("Quantità truppe non disponibile");
             }
           
+        }
+
+        private void btnBonus_Click(object sender, EventArgs e)
+        {
+            switch (bonus)
+            {
+                case "truppe":
+                    txtTruppeDisponibili.Text = (Convert.ToInt32(txtTruppeDisponibili.Text) + 500000).ToString();
+                    qtaRiservaUtente = Convert.ToInt32(txtTruppeDisponibili.Text);
+                    break;
+                case "rif":
+                    trnUtente--;
+                    break;
+                case "comb":
+                    cmbUtente++;
+                    switch (cmbUtente)
+                    {
+                        case 1:
+                            txtComb.Text = "Bassa";
+                            break;
+                        case 2:
+                            txtComb.Text = "Nella media";
+                            break;
+                        case 3:
+                            txtComb.Text = "Alta";
+                            break;
+                        default:
+                            break;
+                    }
+                    break;
+                case "az":
+                    ptnAzioni++;
+                    break;
+                default:
+                    break;
+            }
+            lstMessaggi.Items.Add("Bonus Utilizzato");
         }
     }
 }

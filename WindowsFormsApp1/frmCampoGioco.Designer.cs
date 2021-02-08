@@ -154,6 +154,7 @@
             this.btnBonus.TabIndex = 8;
             this.btnBonus.Text = "usa bonus";
             this.btnBonus.UseVisualStyleBackColor = false;
+            this.btnBonus.Click += new System.EventHandler(this.btnBonus_Click);
             // 
             // btnAzioni
             // 

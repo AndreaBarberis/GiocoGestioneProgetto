@@ -13,7 +13,7 @@ namespace WindowsFormsApp1
 {
     public partial class frmSelezionePersonaggio : Form
     {
-        SoundPlayer italia = new SoundPlayer(@"italia.wav");
+        SoundPlayer italia = new SoundPlayer(@"\bin\Debug\italia.wav");
         SoundPlayer germania = new SoundPlayer(@"germania.wav");
         SoundPlayer inghilterra = new SoundPlayer(@"inghilterra.wav");
         SoundPlayer russia = new SoundPlayer(@"russia.wav");
