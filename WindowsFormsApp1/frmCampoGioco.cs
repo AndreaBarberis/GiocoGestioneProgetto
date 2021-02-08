@@ -19,6 +19,7 @@ namespace WindowsFormsApp1
         int discUtente = 2;
         int trnUtente = 3;
         int ptnAzioni=0;
+        int UtBonus = 3;
         int qtaBot = 3000000;
         int F1 = 1000000;
         int F2 = 1000000;
@@ -29,7 +30,7 @@ namespace WindowsFormsApp1
         int trnBotMalus = 2;
         string bonus;
         SoundPlayer playlist = new SoundPlayer(@"playlist.wav");
-        int sound = 1;
+        int sound = 3;
         public frmCampoGioco()
         {
             InitializeComponent();
@@ -56,11 +57,6 @@ namespace WindowsFormsApp1
             txtF1.Text = (qtaUtente / 3).ToString();
             txtF2.Text = (qtaUtente / 3).ToString();
             txtF3.Text = (qtaUtente / 3).ToString();
-            if(bonus=="az")
-            {
-                ptnAzioni = 1;
-            }
-
         }
 
         private void frmCampoGioco_Load(object sender, EventArgs e)
@@ -137,18 +133,21 @@ namespace WindowsFormsApp1
                     default:
                         break;
                 }
+                lstMessaggi.Items.Add("Disciplina e combattività aumentati");
             }
             else
             {
                 if(az=="treno")
                 {
                     trnBot += 2;
+                    lstMessaggi.Items.Add("Turni più lenti per il nemico");
                 }
                 else if(az=="spia")
                 {
                     lbl1.Text = F1.ToString();
                     lbl2.Text = F2.ToString();
                     lbl3.Text = F3.ToString();
+                    lstMessaggi.Items.Add("Truppe nemiche ora visibili su mappa");
                 }
             }
         }
@@ -189,11 +188,19 @@ namespace WindowsFormsApp1
             switch (bonus)
             {
                 case "truppe":
-                    txtTruppeDisponibili.Text = (Convert.ToInt32(txtTruppeDisponibili.Text) + 500000).ToString();
+                    txtTruppeDisponibili.Text = (Convert.ToInt32(txtTruppeDisponibili.Text) + 50000).ToString();
                     qtaRiservaUtente = Convert.ToInt32(txtTruppeDisponibili.Text);
+                    lstMessaggi.Items.Add("Aggiunti "+50000+" soldati alla riserva");
+                    UtBonus--;
+                    if(UtBonus==0)
+                    {
+                        btnBonus.Enabled = false;
+                    }
                     break;
                 case "rif":
                     trnUtente--;
+                    lstMessaggi.Items.Add("Rifornimenti di truppe più veloci");
+                    btnBonus.Enabled = false;
                     break;
                 case "comb":
                     cmbUtente++;
@@ -211,14 +218,20 @@ namespace WindowsFormsApp1
                         default:
                             break;
                     }
+                    lstMessaggi.Items.Add("Combattività aumentata");
+                    btnBonus.Enabled = false;
                     break;
                 case "az":
-                    ptnAzioni++;
+                    ptnAzioni=ptnAzioni+2;
+                    lstMessaggi.Items.Add("Punti azioni aggiunti");
+                    btnBonus.Enabled = false;
                     break;
                 default:
+                    lstMessaggi.Items.Add("Bonus non disponibile");
+                    btnBonus.Enabled = false;
                     break;
             }
-            lstMessaggi.Items.Add("Bonus Utilizzato");
+           
         }
     }
 }

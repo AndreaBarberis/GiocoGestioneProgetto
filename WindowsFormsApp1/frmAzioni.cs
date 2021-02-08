@@ -72,11 +72,20 @@ namespace WindowsFormsApp1
                     btnSpia.Enabled = true;
                     btnTre.Enabled = true;
                     break;
-                default:
-                    btnDisc.Enabled = false;
-                    btnSpia.Enabled = false;
-                    btnTre.Enabled = false;
-                    break;
+               default:
+                    if(puntiAz<2)
+                    {
+                        btnDisc.Enabled = false;
+                        btnSpia.Enabled = false;
+                        btnTre.Enabled = false;
+                    }
+                    else
+                    {
+                        btnDisc.Enabled = true;
+                        btnSpia.Enabled = true;
+                        btnTre.Enabled = true;
+                    }
+              break;
             }
         }
 
