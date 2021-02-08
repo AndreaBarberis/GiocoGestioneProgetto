@@ -64,6 +64,7 @@
             this.label1.Size = new System.Drawing.Size(218, 17);
             this.label1.TabIndex = 3;
             this.label1.Text = "Seleziona il tuo comandante:";
+            this.label1.Click += new System.EventHandler(this.label1_Click);
             // 
             // label2
             // 
@@ -73,6 +74,7 @@
             this.label2.Size = new System.Drawing.Size(154, 13);
             this.label2.TabIndex = 4;
             this.label2.Text = "Giorgio V: rifornimenti più veloci";
+            this.label2.Click += new System.EventHandler(this.label2_Click);
             // 
             // label3
             // 
@@ -82,6 +84,7 @@
             this.label3.Size = new System.Drawing.Size(116, 26);
             this.label3.TabIndex = 5;
             this.label3.Text = "Nicola II: +truppe inziali\r\n-disciplina";
+            this.label3.Click += new System.EventHandler(this.label3_Click);
             // 
             // label4
             // 
@@ -91,6 +94,7 @@
             this.label4.Size = new System.Drawing.Size(269, 13);
             this.label4.TabIndex = 6;
             this.label4.Text = "Vittorio Emanuele III: +50.000 truppe ordinabili (x3 volte)";
+            this.label4.Click += new System.EventHandler(this.label4_Click);
             // 
             // label5
             // 
@@ -100,6 +104,7 @@
             this.label5.Size = new System.Drawing.Size(140, 13);
             this.label5.TabIndex = 9;
             this.label5.Text = "Guglielmo II: combattività +1";
+            this.label5.Click += new System.EventHandler(this.label5_Click);
             // 
             // label6
             // 
@@ -109,6 +114,7 @@
             this.label6.Size = new System.Drawing.Size(157, 13);
             this.label6.TabIndex = 10;
             this.label6.Text = "Francesco Giuseppe: +1 azione";
+            this.label6.Click += new System.EventHandler(this.label6_Click);
             // 
             // brnRe
             // 
@@ -169,6 +175,7 @@
             this.pbReAp.Size = new System.Drawing.Size(138, 183);
             this.pbReAp.TabIndex = 8;
             this.pbReAp.TabStop = false;
+            this.pbReAp.Click += new System.EventHandler(this.pbReAp_Click);
             this.pbReAp.MouseLeave += new System.EventHandler(this.pbReAp_MouseLeave);
             this.pbReAp.MouseHover += new System.EventHandler(this.pbReAp_MouseHover);
             // 
@@ -181,6 +188,7 @@
             this.pbKaiser.Size = new System.Drawing.Size(138, 183);
             this.pbKaiser.TabIndex = 7;
             this.pbKaiser.TabStop = false;
+            this.pbKaiser.Click += new System.EventHandler(this.pbKaiser_Click);
             this.pbKaiser.MouseLeave += new System.EventHandler(this.pbKaiser_MouseLeave);
             this.pbKaiser.MouseHover += new System.EventHandler(this.pbKaiser_MouseHover);
             // 
@@ -193,6 +201,7 @@
             this.pbZar.Size = new System.Drawing.Size(138, 183);
             this.pbZar.TabIndex = 2;
             this.pbZar.TabStop = false;
+            this.pbZar.Click += new System.EventHandler(this.pbZar_Click);
             this.pbZar.MouseLeave += new System.EventHandler(this.pbZar_MouseLeave);
             this.pbZar.MouseHover += new System.EventHandler(this.pbZar_MouseHover);
             // 
@@ -205,6 +214,7 @@
             this.pbKing.Size = new System.Drawing.Size(138, 183);
             this.pbKing.TabIndex = 1;
             this.pbKing.TabStop = false;
+            this.pbKing.Click += new System.EventHandler(this.pbKing_Click);
             this.pbKing.MouseLeave += new System.EventHandler(this.pbKing_MouseLeave);
             this.pbKing.MouseHover += new System.EventHandler(this.pbKing_MouseHover);
             // 
@@ -217,6 +227,7 @@
             this.pictureBox1.Size = new System.Drawing.Size(138, 183);
             this.pictureBox1.TabIndex = 0;
             this.pictureBox1.TabStop = false;
+            this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click);
             this.pictureBox1.MouseLeave += new System.EventHandler(this.pictureBox1_MouseLeave);
             this.pictureBox1.MouseHover += new System.EventHandler(this.pictureBox1_MouseHover);
             // 
@@ -239,6 +250,7 @@
             this.label7.Size = new System.Drawing.Size(171, 13);
             this.label7.TabIndex = 17;
             this.label7.Text = "Consigliato vedere prima di giocare";
+            this.label7.Click += new System.EventHandler(this.label7_Click);
             // 
             // btnExtra
             // 

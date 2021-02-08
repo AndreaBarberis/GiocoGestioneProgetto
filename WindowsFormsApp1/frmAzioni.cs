@@ -35,21 +35,21 @@ namespace WindowsFormsApp1
         private void btnDisc_Click(object sender, EventArgs e)
         {
             az = "disc";
-            puntiAz -= 1;
+            puntiAz = puntiAz-2;
             this.Close();
         }
 
         private void btnTre_Click(object sender, EventArgs e)
         {
             az = "treno";
-            puntiAz -= 2;
+            puntiAz = puntiAz-3;
             this.Close();
         }
 
         private void btnSpia_Click(object sender, EventArgs e)
         {
             az = "spia";
-            puntiAz -= 3;
+            puntiAz = puntiAz-4;
             this.Close();
         }
 
@@ -57,17 +57,17 @@ namespace WindowsFormsApp1
         {
             switch (puntiAz)
             {
-                case 1:
+                case 2:
                     btnDisc.Enabled = true;
                     btnSpia.Enabled = false;
                     btnTre.Enabled = false;
                     break;
-                case 2:
+                case 3:
                     btnDisc.Enabled = true;
                     btnSpia.Enabled = true;
                     btnTre.Enabled = false;
                     break;
-                case 3:
+                case 4:
                     btnDisc.Enabled = true;
                     btnSpia.Enabled = true;
                     btnTre.Enabled = true;
