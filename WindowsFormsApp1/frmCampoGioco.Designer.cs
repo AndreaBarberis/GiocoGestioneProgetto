@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmCampoGioco));
             this.txtTruppeDisponibili = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
@@ -57,6 +58,7 @@
             this.label8 = new System.Windows.Forms.Label();
             this.btnAssalta = new System.Windows.Forms.Button();
             this.btnPassa = new System.Windows.Forms.Button();
+            this.tmrBot = new System.Windows.Forms.Timer(this.components);
             this.SuspendLayout();
             // 
             // txtTruppeDisponibili
@@ -219,7 +221,7 @@
             this.btnOpzioni.ForeColor = System.Drawing.SystemColors.ControlText;
             this.btnOpzioni.Location = new System.Drawing.Point(760, 371);
             this.btnOpzioni.Name = "btnOpzioni";
-            this.btnOpzioni.Size = new System.Drawing.Size(125, 49);
+            this.btnOpzioni.Size = new System.Drawing.Size(125, 61);
             this.btnOpzioni.TabIndex = 14;
             this.btnOpzioni.Text = "Musica si/no";
             this.btnOpzioni.UseVisualStyleBackColor = false;
@@ -344,6 +346,12 @@
             this.btnPassa.TabIndex = 27;
             this.btnPassa.Text = "passa turno";
             this.btnPassa.UseVisualStyleBackColor = false;
+            this.btnPassa.Click += new System.EventHandler(this.btnPassa_Click);
+            // 
+            // tmrBot
+            // 
+            this.tmrBot.Interval = 30000;
+            this.tmrBot.Tick += new System.EventHandler(this.tmrBot_Tick);
             // 
             // frmCampoGioco
             // 
@@ -423,5 +431,6 @@
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Button btnAssalta;
         private System.Windows.Forms.Button btnPassa;
+        private System.Windows.Forms.Timer tmrBot;
     }
 }
