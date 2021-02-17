@@ -19,6 +19,7 @@ namespace WindowsFormsApp1
         int cmbUtente = 2; //combattività utente
         int discUtente = 2; //disciplina utente
         int trnUtente = 3; //turni x rifornimento ad utente
+        int trnUtenteMalus = 0; //contatore per il malus dei turni dell'utente dopo aver selezionato l'azione di sabotaggio
         int ptnAzioni=0; //punti azioni utente
         int UtBonus = 3; //utilizzato per il bonus di Vittorio Emanuele
         string bonus; //per sapere il bonus scelto dall'utente
@@ -31,6 +32,7 @@ namespace WindowsFormsApp1
         int cmbBot = 2; //combattività bot
         int discBot = 2; //disciplina bot
         int trnBot = 3; //turni x rifornimento bot
+        int ptnAzioneBot = 0; //punti azioni bot
         int trnBotMalus = 2; //contatore per il malus dei turni del bot dopo aver selezzionato l'azione di sabotaggio
         Random rndfronte;
         Random rndsceltaIniz;
@@ -276,21 +278,25 @@ namespace WindowsFormsApp1
                         if (fNord < 50000)
                         {
                             fNord += rndQtaTruppe.Next(10000, qtaRiservaBot / 2);
+                            lstMessaggi.Items.Add("Il nemico ha spostato delle truppe al fronte Nord");
                         }
                         else
                         {
                             if (fSud < 50000)
                             {
                                 fSud+= rndQtaTruppe.Next(10000, qtaRiservaBot / 2);
+                                lstMessaggi.Items.Add("Il nemico ha spostato delle truppe al fronte Sud");
                             }
                             else
                             {
                                 fCentro += rndQtaTruppe.Next(10000, qtaRiservaBot / 2);
+                                lstMessaggi.Items.Add("Il nemico ha spostato delle truppe al fronte Centrale");
                             }
                         }
                     }
                     break;
                 case 2: //assalto
+                    int qta=0;
                     int f=rndfronte.Next(1,4);
                     if(fNord>100000 || fSud>100000  || fCentro>100000)
                     {
@@ -298,7 +304,7 @@ namespace WindowsFormsApp1
                         {
                             if(fNord>100000)
                             {
-                               int qta = rndQtaTruppe.Next(50000, fNord/2);
+                               qta= rndQtaTruppe.Next(50000, fNord/2);
                             }
                            
                         }
@@ -308,22 +314,42 @@ namespace WindowsFormsApp1
                             {
                                 if (fSud > 100000)
                                 {
-                                    int qta = rndQtaTruppe.Next(50000, fSud/2);
+                                    qta = rndQtaTruppe.Next(50000, fSud/2);
                                 }
                             }
                             else
                             {
                                 if (fCentro > 100000)
                                 {
-                                    int qta = rndQtaTruppe.Next(50000, fCentro/2);
+                                   qta = rndQtaTruppe.Next(50000, fCentro/2);
                                 }
                             }
                         }
-                       
-                        assaltoBot(f, qtaBot);
+                       assaltoBot(f, qta);
                     }
                    break;
-                case 3:
+                case 3: //azioni
+                    if (ptnAzioneBot >= 3)
+                    {
+                        ptnAzioneBot = ptnAzioneBot - 3;
+                        trnUtente = trnUtente + 2;
+                        trnUtenteMalus = 2;
+                    }
+                    else
+                    {
+                        if (ptnAzioneBot == 2)
+                        {
+                            if (cmbBot < 3)
+                            {
+                                cmbBot += 1;
+                            }
+                            if (discBot < 3)
+                            {
+                                discUtente += 1;
+                            }
+                        }
+
+                    }
                     break;
                 default:
                     break;
