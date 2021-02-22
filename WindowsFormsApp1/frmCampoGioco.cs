@@ -144,8 +144,8 @@ namespace WindowsFormsApp1
                     default:
                         break;
                 }
-                lstMessaggi.Items.Add("Disciplina e combattività aumentati");
                 morse.Play();
+                lstMessaggi.Items.Add("Disciplina e combattività aumentati");
             }
             else
             {
@@ -153,16 +153,16 @@ namespace WindowsFormsApp1
                 {
                     trnBot += 2;
                     malusBot = true;
-                    lstMessaggi.Items.Add("Turni più lenti per il nemico");
                     morse.Play();
+                    lstMessaggi.Items.Add("Turni più lenti per il nemico");
                 }
                 else if(az=="spia")
                 {
                     lbl1.Text = fNord.ToString();
                     lbl2.Text = fCentro.ToString();
                     lbl3.Text = fSud.ToString();
-                    lstMessaggi.Items.Add("Truppe nemiche ora visibili su mappa");
                     morse.Play();
+                    lstMessaggi.Items.Add("Truppe nemiche ora visibili su mappa");
                 }
             }
         }
@@ -262,25 +262,9 @@ namespace WindowsFormsApp1
            
         }
 
-        private void tmrBot_Tick(object sender, EventArgs e)
-        {
-
-        }
 
         private void btnPassa_Click(object sender, EventArgs e)
         {
-            //foreach (var button in this.Controls.OfType<Button>())
-            //{
-            //    if(button.Name!="btnOpzioni" || button.Name!="btnEsci")
-            //    {
-            //        button.Enabled = false;
-            //    }
-            //    else
-            //    {
-            //        button.Enabled = true;
-            //    }
-
-            //}
             gestioneBottoni(false);
             rndsceltaIniz = new Random();
             int rnd=rndsceltaIniz.Next(1, 4);
@@ -414,6 +398,11 @@ namespace WindowsFormsApp1
         private void assaltoBot(int f, int qtaBot)
         {
             throw new NotImplementedException();
+        }
+
+        private void btnAssalta_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
