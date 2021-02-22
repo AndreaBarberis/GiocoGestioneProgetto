@@ -33,13 +33,15 @@ namespace WindowsFormsApp1
         int discBot = 2; //disciplina bot
         int trnBot = 3; //turni x rifornimento bot
         int ptnAzioneBot = 0; //punti azioni bot
+        bool malusBot = false;
         int trnBotMalus = 2; //contatore per il malus dei turni del bot dopo aver selezzionato l'azione di sabotaggio
-        Random rndfronte;
-        Random rndsceltaIniz;
-        Random rndQtaTruppe;
+        Random rndfronte = new Random();
+        Random rndsceltaIniz=new Random();
+        Random rndQtaTruppe=new Random();
         
         SoundPlayer playlist = new SoundPlayer(@"playlist.wav");
-        int sound = 3;
+        SoundPlayer morse = new SoundPlayer(@"morse.wav");
+        int sound = 1;
         public frmCampoGioco()
         {
             InitializeComponent();
@@ -70,7 +72,7 @@ namespace WindowsFormsApp1
 
         private void frmCampoGioco_Load(object sender, EventArgs e)
         {
-            playlist.PlayLooping(); //caricamento della playlist
+         //   playlist.PlayLooping(); //caricamento della playlist
         }
 
         private void btnEsci_Click(object sender, EventArgs e)
@@ -88,7 +90,7 @@ namespace WindowsFormsApp1
             }
             else //se non è attiva la faccio ripartire
             {
-                playlist.PlaySync();
+                playlist.PlayLooping();
                 sound = 1;
             }
         }
@@ -143,13 +145,16 @@ namespace WindowsFormsApp1
                         break;
                 }
                 lstMessaggi.Items.Add("Disciplina e combattività aumentati");
+                morse.Play();
             }
             else
             {
                 if(az=="treno")
                 {
                     trnBot += 2;
+                    malusBot = true;
                     lstMessaggi.Items.Add("Turni più lenti per il nemico");
+                    morse.Play();
                 }
                 else if(az=="spia")
                 {
@@ -157,6 +162,7 @@ namespace WindowsFormsApp1
                     lbl2.Text = fCentro.ToString();
                     lbl3.Text = fSud.ToString();
                     lstMessaggi.Items.Add("Truppe nemiche ora visibili su mappa");
+                    morse.Play();
                 }
             }
         }
@@ -170,18 +176,21 @@ namespace WindowsFormsApp1
                     case "nord":
                         txtF1.Text = (Convert.ToInt32(txtF1.Text) + Convert.ToInt32(txtSelezRiserve.Text)).ToString();
                         lstMessaggi.Items.Add("Sono state spostate " + txtSelezRiserve.Text + " truppe al Fronte nord");
+                        morse.Play();
                         qtaRiservaUtente = qtaRiservaUtente - Convert.ToInt32(txtSelezRiserve.Text);
                         txtTruppeDisponibili.Text = (Convert.ToInt32(txtTruppeDisponibili.Text)-Convert.ToInt64(txtSelezRiserve.Text)).ToString();
                         break;
                     case "centro":
                         txtF2.Text = (Convert.ToInt32(txtF2.Text) + Convert.ToInt32(txtSelezRiserve.Text)).ToString();
                         lstMessaggi.Items.Add("Sono state spostate " + txtSelezRiserve.Text + " truppe al Fronte centrale");
+                        morse.Play();
                         qtaRiservaUtente = qtaRiservaUtente - Convert.ToInt32(txtSelezRiserve.Text);
                         txtTruppeDisponibili.Text = (Convert.ToInt32(txtTruppeDisponibili.Text) - Convert.ToInt64(txtSelezRiserve.Text)).ToString();
                         break;
                     case "sud":
                         txtF3.Text = (Convert.ToInt32(txtF3.Text) + Convert.ToInt32(txtSelezRiserve.Text)).ToString();
                         lstMessaggi.Items.Add("Sono state spostate " + txtSelezRiserve.Text + " truppe al Fronte sud");
+                        morse.Play();
                         qtaRiservaUtente = qtaRiservaUtente - Convert.ToInt32(txtSelezRiserve.Text);
                         txtTruppeDisponibili.Text = (Convert.ToInt32(txtTruppeDisponibili.Text) - Convert.ToInt64(txtSelezRiserve.Text)).ToString();
                         
@@ -206,6 +215,7 @@ namespace WindowsFormsApp1
                     txtTruppeDisponibili.Text = (Convert.ToInt32(txtTruppeDisponibili.Text) + 50000).ToString();
                     qtaRiservaUtente = Convert.ToInt32(txtTruppeDisponibili.Text);
                     lstMessaggi.Items.Add("Aggiunti "+50000+" soldati alla riserva");
+                    morse.Play();
                     UtBonus--;
                     if(UtBonus==0) //lo posso fare fino a 3 volte
                     {
@@ -215,6 +225,7 @@ namespace WindowsFormsApp1
                 case "rif":
                     trnUtente--;
                     lstMessaggi.Items.Add("Rifornimenti di truppe più veloci");
+                    morse.Play();
                     btnBonus.Enabled = false;
                     break;
                 case "comb":
@@ -234,11 +245,13 @@ namespace WindowsFormsApp1
                             break;
                     }
                     lstMessaggi.Items.Add("Combattività aumentata");
+                    morse.Play();
                     btnBonus.Enabled = false;
                     break;
                 case "az":
                     ptnAzioni=ptnAzioni+2;
                     lstMessaggi.Items.Add("Punti azioni aggiunti");
+                    morse.Play();
                     btnBonus.Enabled = false;
                     break;
                 default:
@@ -266,68 +279,76 @@ namespace WindowsFormsApp1
             //    {
             //        button.Enabled = true;
             //    }
-               
+
             //}
+            gestioneBottoni(false);
             rndsceltaIniz = new Random();
             int rnd=rndsceltaIniz.Next(1, 4);
             switch (rnd) //azione
             {
                 case 1: //spostamento
-                    if(qtaRiservaBot>10000)
+                    if (qtaRiservaBot > 10000)
                     {
                         if (fNord < 50000)
                         {
                             fNord += rndQtaTruppe.Next(10000, qtaRiservaBot / 2);
                             lstMessaggi.Items.Add("Il nemico ha spostato delle truppe al fronte Nord");
+                            morse.Play();
                         }
                         else
                         {
                             if (fSud < 50000)
                             {
-                                fSud+= rndQtaTruppe.Next(10000, qtaRiservaBot / 2);
+                                fSud += rndQtaTruppe.Next(10000, qtaRiservaBot / 2);
                                 lstMessaggi.Items.Add("Il nemico ha spostato delle truppe al fronte Sud");
+                                morse.Play();
                             }
                             else
                             {
                                 fCentro += rndQtaTruppe.Next(10000, qtaRiservaBot / 2);
                                 lstMessaggi.Items.Add("Il nemico ha spostato delle truppe al fronte Centrale");
+                                morse.Play();
                             }
                         }
                     }
-                    break;
-                case 2: //assalto
-                    int qta=0;
-                    int f=rndfronte.Next(1,4);
-                    if(fNord>100000 || fSud>100000  || fCentro>100000)
+                    else
                     {
-                        if(f==1)
+                        goto case 2;
+                    }
+                   break;
+                case 2: //assalto
+                    int qta = 0;
+                    int f = rndfronte.Next(1, 4);
+                    if (fNord > 100000 || fSud > 100000 || fCentro > 100000)
+                    {
+                        if (f == 1)
                         {
-                            if(fNord>100000)
+                            if (fNord > 100000)
                             {
-                               qta= rndQtaTruppe.Next(50000, fNord/2);
+                                qta = rndQtaTruppe.Next(50000, fNord / 2);
                             }
-                           
+
                         }
                         else
                         {
-                            if(f==2)
+                            if (f == 2)
                             {
                                 if (fSud > 100000)
                                 {
-                                    qta = rndQtaTruppe.Next(50000, fSud/2);
+                                    qta = rndQtaTruppe.Next(50000, fSud / 2);
                                 }
                             }
                             else
                             {
                                 if (fCentro > 100000)
                                 {
-                                   qta = rndQtaTruppe.Next(50000, fCentro/2);
+                                    qta = rndQtaTruppe.Next(50000, fCentro / 2);
                                 }
                             }
                         }
-                       assaltoBot(f, qta);
+                        assaltoBot(f, qta);
                     }
-                   break;
+                    break;
                 case 3: //azioni
                     if (ptnAzioneBot >= 3)
                     {
@@ -357,9 +378,37 @@ namespace WindowsFormsApp1
             trnBot--;
             if(trnBot==0)
             {
-                trnBot = 3;
+                if(malusBot==true)
+                {
+                    if(trnBotMalus>0)
+                    {
+                        trnBotMalus--;
+                        trnBot = 5;
+                    }
+                    else
+                    {
+                        malusBot = false;
+                        trnBotMalus = 2;
+                        trnBot = 3;
+                        
+                    }
+                }
+                else
+                {
+                    trnBot = 3;
+                }
                 qtaRiservaBot += 50000;
             }
+            gestioneBottoni(true);
+        }
+
+        private void gestioneBottoni(bool enable)
+        {
+            btnAssalta.Enabled = enable;
+            btnAzioni.Enabled = enable;
+            btnBonus.Enabled = enable;
+            btnPassa.Enabled = enable;
+            btnSposta.Enabled = enable;
         }
 
         private void assaltoBot(int f, int qtaBot)
