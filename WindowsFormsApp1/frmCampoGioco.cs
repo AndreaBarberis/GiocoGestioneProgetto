@@ -72,7 +72,7 @@ namespace WindowsFormsApp1
 
         private void frmCampoGioco_Load(object sender, EventArgs e)
         {
-         //   playlist.PlayLooping(); //caricamento della playlist
+          playlist.Play(); //caricamento della playlist
         }
 
         private void btnEsci_Click(object sender, EventArgs e)
@@ -90,7 +90,7 @@ namespace WindowsFormsApp1
             }
             else //se non è attiva la faccio ripartire
             {
-                playlist.PlayLooping();
+                playlist.Play();
                 sound = 1;
             }
         }
