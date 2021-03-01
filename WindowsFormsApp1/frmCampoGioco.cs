@@ -397,7 +397,91 @@ namespace WindowsFormsApp1
 
         private void assaltoBot(int f, int qtaBot)
         {
-            throw new NotImplementedException();
+            int totBot = qtaBot * discBot * cmbUtente;
+            int totUser = 0;
+            int diff;
+            switch (f)
+            {
+                case 1:
+                    totUser = Convert.ToInt32(txtF1.Text) * discBot * cmbUtente;
+                    break;
+                case 2:
+                    totUser = Convert.ToInt32(txtF2.Text) * discBot * cmbUtente;
+                    break;
+                case 3:
+                    totUser = Convert.ToInt32(txtF3.Text) * discBot * cmbUtente;
+                    break;
+                default:
+                    break;
+            }
+            diff = totBot - totUser;
+           if(diff>=200000)
+           {
+                qtaBot = qtaBot - 200000;
+                switch (f)
+                {
+                    case 1:
+                        txtF1.Text = (Convert.ToInt32(txtF1.Text) - diff).ToString();
+                        fNord = fNord - 200000;
+                        break;
+                    case 2:
+                        txtF2.Text = (Convert.ToInt32(txtF2.Text) - diff).ToString();
+                        fCentro = fCentro - 200000;
+                        break;
+                    case 3:
+                        txtF3.Text = (Convert.ToInt32(txtF2.Text) - diff).ToString();
+                        fSud = fSud - 200000;
+                        break;
+                    default:
+                        break;
+                }
+           }
+           else
+            {
+                if(diff>=100000)
+                {
+                    qtaBot = qtaBot - 100000;
+                    switch (f)
+                    {
+                        case 1:
+                            txtF1.Text = (Convert.ToInt32(txtF1.Text) - 100000).ToString();
+                            fNord = fNord - 200000;
+                            break;
+                        case 2:
+                            txtF2.Text = (Convert.ToInt32(txtF2.Text) - 100000).ToString();
+                            fCentro = fCentro - 200000;
+                            break;
+                        case 3:
+                            txtF3.Text = (Convert.ToInt32(txtF2.Text) - 100000).ToString();
+                            fCentro = fCentro - 200000;
+                            break;
+                        default:
+                            break;
+                    }
+                }
+                else
+                {
+                    qtaBot = qtaBot - 100000;
+                    switch (f)
+                    {
+                        case 1:
+                            txtF1.Text = (Convert.ToInt32(txtF1.Text) - 50000).ToString();
+                            fNord = fNord - 100000;
+                            break;
+                        case 2:
+                            txtF2.Text = (Convert.ToInt32(txtF2.Text) - 50000).ToString();
+                            fSud = fSud - 100000;
+                            break;
+                        case 3:
+                            txtF3.Text = (Convert.ToInt32(txtF2.Text) - 50000).ToString();
+                            fCentro = fCentro - 100000;
+                            break;
+                        default:
+                            break;
+                    }
+                }
+            }
+
         }
 
         private void btnAssalta_Click(object sender, EventArgs e)
