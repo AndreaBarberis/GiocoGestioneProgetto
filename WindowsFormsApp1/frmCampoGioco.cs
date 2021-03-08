@@ -19,10 +19,11 @@ namespace WindowsFormsApp1
         int cmbUtente = 2; //combattività utente
         int discUtente = 2; //disciplina utente
         int trnUtente = 3; //turni x rifornimento ad utente
-        int trnUtenteMalus = 0; //contatore per il malus dei turni dell'utente dopo aver selezionato l'azione di sabotaggio
+        int trnUtenteMalus =2; //contatore per il malus dei turni dell'utente dopo aver selezionato l'azione di sabotaggio
         int ptnAzioni=0; //punti azioni utente
         int UtBonus = 3; //utilizzato per il bonus di Vittorio Emanuele
         string bonus; //per sapere il bonus scelto dall'utente
+        bool malusUtente = false;
         /*VARIABILI BOT*/
         int qtaBot = 3000000; //quantità truppe in generale
         int qtaRiservaBot=0; //riserva del bot
@@ -265,6 +266,30 @@ namespace WindowsFormsApp1
 
         private void btnPassa_Click(object sender, EventArgs e)
         {
+            trnUtente--;
+            if (trnUtente == 0)
+            {
+                if (malusUtente == true)
+                {
+                    if (trnUtenteMalus > 0)
+                    {
+                        trnUtenteMalus--;
+                        trnUtente = 5;
+                    }
+                    else
+                    {
+                        malusUtente = false;
+                        trnUtenteMalus = 2;
+                        trnUtente = 3;
+
+                    }
+                }
+                else
+                {
+                    trnUtente = 3;
+                }
+                qtaRiservaUtente += 50000;
+            }
             gestioneBottoni(false);
             rndsceltaIniz = new Random();
             int rnd=rndsceltaIniz.Next(1, 4);
@@ -339,6 +364,7 @@ namespace WindowsFormsApp1
                         ptnAzioneBot = ptnAzioneBot - 3;
                         trnUtente = trnUtente + 2;
                         trnUtenteMalus = 2;
+                        malusUtente = true;
                     }
                     else
                     {
