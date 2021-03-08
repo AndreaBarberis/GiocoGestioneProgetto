@@ -486,7 +486,111 @@ namespace WindowsFormsApp1
 
         private void btnAssalta_Click(object sender, EventArgs e)
         {
+            switch (txtFronte.Text)
+            {
+                case "nord":
+                    assalto("f1", Convert.ToInt32(txtF1.Text));
+                    break;
+                case "centro":
+                    assalto("f2", Convert.ToInt32(txtF2.Text));
+                    break;
+                case "sud":
+                    assalto("f3", Convert.ToInt32(txtF3.Text));
+                    break;
+                default:
+                    MessageBox.Show("Selezionare fronte: nord - centro - sud");
+                    break;
+            }
+        }
 
+        private void assalto(string fronte, int qta)
+        {
+            int totUser = qta * discUtente * cmbUtente;
+            int totBot = 0;
+            int diff;
+            switch (fronte)
+            {
+                case "f1":
+                    totBot = fNord * discBot * cmbBot;
+                    break;
+                case "f2":
+                    totBot = fCentro * discBot * cmbBot;
+                    break;
+                case "f3":
+                    totBot = fSud * discBot * cmbBot;
+                    break;
+                default:
+                    break;
+            }
+            diff = totBot - totUser;
+            if (diff >= 200000)
+            {
+                qta = qta - 200000;
+                switch (fronte)
+                {
+                    case "f1":
+                        txtF1.Text = qta.ToString();
+                        fNord = fNord - 200000;
+                        break;
+                    case "f2":
+                        txtF2.Text = qta.ToString();
+                        fCentro = fCentro - 200000;
+                        break;
+                    case "f3":
+                        txtF1.Text = qta.ToString();
+                        fSud = fSud - 200000;
+                        break;
+                    default:
+                        break;
+                }
+            }
+            else
+            {
+                if (diff >= 100000)
+                {
+                    qta = qta - 100000;
+                    switch (fronte)
+                    {
+                        case "f1":
+                            txtF1.Text = qta.ToString();
+                            fNord = fNord - 100000;
+                            break;
+                        case "f2":
+                            txtF2.Text = qta.ToString();
+                            fCentro = fCentro - 100000;
+                            break;
+                        case "f3":
+                            txtF1.Text = qta.ToString();
+                            fSud = fSud - 100000;
+                            break;
+                        default:
+                            break;
+                    }
+                }
+                else
+                {
+                    qta = qta - 100000;
+                    switch (fronte)
+                    {
+                        case "f1":
+                            txtF1.Text =qta.ToString();
+                            fNord = fNord - 50000;
+                            break;
+                        case "f2":
+                            txtF2.Text = qta.ToString();
+                            fCentro = fCentro - 50000;
+                            break;
+                        case "f3":
+                            txtF1.Text = qta.ToString();
+                            fSud = fSud - 50000;
+                            break;
+                        default:
+                            break;
+                    }
+                }
+            }
+            lstMessaggi.Items.Add("assalto eseguito");
+            morse.Play();
         }
     }
 }
