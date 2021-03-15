@@ -172,23 +172,23 @@ namespace WindowsFormsApp1
         {
             if(Convert.ToInt32(txtSelezRiserve.Text)<=Convert.ToInt32(txtTruppeDisponibili.Text)) //se il numero scelto è possibile
             {
-                switch (txtFronte.Text) 
+                switch (cmbFronte.SelectedItem) 
                 {
-                    case "nord":
+                    case "Nord":
                         txtF1.Text = (Convert.ToInt32(txtF1.Text) + Convert.ToInt32(txtSelezRiserve.Text)).ToString();
                         lstMessaggi.Items.Add("Sono state spostate " + txtSelezRiserve.Text + " truppe al Fronte nord");
                         morse.Play();
                         qtaRiservaUtente = qtaRiservaUtente - Convert.ToInt32(txtSelezRiserve.Text);
                         txtTruppeDisponibili.Text = (Convert.ToInt32(txtTruppeDisponibili.Text)-Convert.ToInt64(txtSelezRiserve.Text)).ToString();
                         break;
-                    case "centro":
+                    case "Centro":
                         txtF2.Text = (Convert.ToInt32(txtF2.Text) + Convert.ToInt32(txtSelezRiserve.Text)).ToString();
                         lstMessaggi.Items.Add("Sono state spostate " + txtSelezRiserve.Text + " truppe al Fronte centrale");
                         morse.Play();
                         qtaRiservaUtente = qtaRiservaUtente - Convert.ToInt32(txtSelezRiserve.Text);
                         txtTruppeDisponibili.Text = (Convert.ToInt32(txtTruppeDisponibili.Text) - Convert.ToInt64(txtSelezRiserve.Text)).ToString();
                         break;
-                    case "sud":
+                    case "Sud":
                         txtF3.Text = (Convert.ToInt32(txtF3.Text) + Convert.ToInt32(txtSelezRiserve.Text)).ToString();
                         lstMessaggi.Items.Add("Sono state spostate " + txtSelezRiserve.Text + " truppe al Fronte sud");
                         morse.Play();
@@ -512,15 +512,15 @@ namespace WindowsFormsApp1
 
         private void btnAssalta_Click(object sender, EventArgs e)
         {
-            switch (txtFronte.Text)
+            switch (cmbFronte.SelectedItem)
             {
-                case "nord":
+                case "Nord":
                     assalto("f1", Convert.ToInt32(txtF1.Text));
                     break;
-                case "centro":
+                case "Centro":
                     assalto("f2", Convert.ToInt32(txtF2.Text));
                     break;
-                case "sud":
+                case "Sud":
                     assalto("f3", Convert.ToInt32(txtF3.Text));
                     break;
                 default:

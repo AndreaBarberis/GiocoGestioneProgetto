@@ -50,13 +50,13 @@
             this.lbl1 = new System.Windows.Forms.Label();
             this.lbl2 = new System.Windows.Forms.Label();
             this.lbl3 = new System.Windows.Forms.Label();
-            this.txtFronte = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
             this.btnAssalta = new System.Windows.Forms.Button();
             this.btnPassa = new System.Windows.Forms.Button();
+            this.cmbFronte = new System.Windows.Forms.ComboBox();
             this.SuspendLayout();
             // 
             // txtTruppeDisponibili
@@ -276,13 +276,6 @@
             this.lbl3.TabIndex = 20;
             this.lbl3.Text = "---";
             // 
-            // txtFronte
-            // 
-            this.txtFronte.Location = new System.Drawing.Point(300, 345);
-            this.txtFronte.Name = "txtFronte";
-            this.txtFronte.Size = new System.Drawing.Size(148, 20);
-            this.txtFronte.TabIndex = 21;
-            // 
             // label5
             // 
             this.label5.AutoSize = true;
@@ -347,6 +340,18 @@
             this.btnPassa.UseVisualStyleBackColor = false;
             this.btnPassa.Click += new System.EventHandler(this.btnPassa_Click);
             // 
+            // cmbFronte
+            // 
+            this.cmbFronte.FormattingEnabled = true;
+            this.cmbFronte.Items.AddRange(new object[] {
+            "Nord",
+            "Centro",
+            "Sud"});
+            this.cmbFronte.Location = new System.Drawing.Point(297, 345);
+            this.cmbFronte.Name = "cmbFronte";
+            this.cmbFronte.Size = new System.Drawing.Size(121, 21);
+            this.cmbFronte.TabIndex = 28;
+            // 
             // frmCampoGioco
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -355,13 +360,13 @@
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(915, 518);
             this.ControlBox = false;
+            this.Controls.Add(this.cmbFronte);
             this.Controls.Add(this.btnPassa);
             this.Controls.Add(this.btnAssalta);
             this.Controls.Add(this.label8);
             this.Controls.Add(this.label7);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.label5);
-            this.Controls.Add(this.txtFronte);
             this.Controls.Add(this.lbl3);
             this.Controls.Add(this.lbl2);
             this.Controls.Add(this.lbl1);
@@ -418,12 +423,12 @@
         private System.Windows.Forms.Label lbl1;
         private System.Windows.Forms.Label lbl2;
         private System.Windows.Forms.Label lbl3;
-        private System.Windows.Forms.TextBox txtFronte;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Button btnAssalta;
         private System.Windows.Forms.Button btnPassa;
+        private System.Windows.Forms.ComboBox cmbFronte;
     }
 }

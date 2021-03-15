@@ -68,6 +68,8 @@
             // label2
             // 
             this.label2.AutoSize = true;
+            this.label2.BackColor = System.Drawing.SystemColors.Control;
+            this.label2.ForeColor = System.Drawing.SystemColors.ControlText;
             this.label2.Location = new System.Drawing.Point(330, 226);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(154, 13);
@@ -112,52 +114,62 @@
             // 
             // brnRe
             // 
+            this.brnRe.BackColor = System.Drawing.Color.Transparent;
+            this.brnRe.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.brnRe.Location = new System.Drawing.Point(89, 242);
             this.brnRe.Name = "brnRe";
             this.brnRe.Size = new System.Drawing.Size(75, 23);
             this.brnRe.TabIndex = 11;
             this.brnRe.Text = "Scegli il Re";
-            this.brnRe.UseVisualStyleBackColor = true;
+            this.brnRe.UseVisualStyleBackColor = false;
             this.brnRe.Click += new System.EventHandler(this.brnRe_Click);
             // 
             // bntKing
             // 
+            this.bntKing.BackColor = System.Drawing.Color.Transparent;
+            this.bntKing.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.bntKing.Location = new System.Drawing.Point(361, 242);
             this.bntKing.Name = "bntKing";
             this.bntKing.Size = new System.Drawing.Size(75, 23);
             this.bntKing.TabIndex = 12;
             this.bntKing.Text = "scegli il King";
-            this.bntKing.UseVisualStyleBackColor = true;
+            this.bntKing.UseVisualStyleBackColor = false;
             this.bntKing.Click += new System.EventHandler(this.bntKing_Click);
             // 
             // btnZar
             // 
+            this.btnZar.BackColor = System.Drawing.Color.Transparent;
+            this.btnZar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnZar.Location = new System.Drawing.Point(642, 255);
             this.btnZar.Name = "btnZar";
             this.btnZar.Size = new System.Drawing.Size(75, 23);
             this.btnZar.TabIndex = 13;
             this.btnZar.Text = "scegli lo Zar";
-            this.btnZar.UseVisualStyleBackColor = true;
+            this.btnZar.UseVisualStyleBackColor = false;
             this.btnZar.Click += new System.EventHandler(this.btnZar_Click);
             // 
             // btnKaiser
             // 
+            this.btnKaiser.BackColor = System.Drawing.Color.Transparent;
+            this.btnKaiser.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnKaiser.Location = new System.Drawing.Point(199, 455);
             this.btnKaiser.Name = "btnKaiser";
             this.btnKaiser.Size = new System.Drawing.Size(112, 23);
             this.btnKaiser.TabIndex = 14;
             this.btnKaiser.Text = "scegli il Kaiser";
-            this.btnKaiser.UseVisualStyleBackColor = true;
+            this.btnKaiser.UseVisualStyleBackColor = false;
             this.btnKaiser.Click += new System.EventHandler(this.btnKaiser_Click);
             // 
             // btnReAp
             // 
+            this.btnReAp.BackColor = System.Drawing.Color.Transparent;
+            this.btnReAp.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnReAp.Location = new System.Drawing.Point(473, 457);
             this.btnReAp.Name = "btnReAp";
             this.btnReAp.Size = new System.Drawing.Size(127, 23);
             this.btnReAp.TabIndex = 15;
             this.btnReAp.Text = "scegli il Re Apostolico";
-            this.btnReAp.UseVisualStyleBackColor = true;
+            this.btnReAp.UseVisualStyleBackColor = false;
             this.btnReAp.Click += new System.EventHandler(this.btnReAp_Click);
             // 
             // pbReAp
@@ -198,6 +210,7 @@
             // 
             // pbKing
             // 
+            this.pbKing.BackColor = System.Drawing.Color.Transparent;
             this.pbKing.BackgroundImage = global::WindowsFormsApp1.Properties.Resources.download;
             this.pbKing.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.pbKing.Location = new System.Drawing.Point(333, 40);
@@ -222,13 +235,15 @@
             // 
             // btnInfo
             // 
+            this.btnInfo.BackColor = System.Drawing.Color.Transparent;
+            this.btnInfo.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnInfo.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnInfo.Location = new System.Drawing.Point(12, 402);
             this.btnInfo.Name = "btnInfo";
             this.btnInfo.Size = new System.Drawing.Size(160, 88);
             this.btnInfo.TabIndex = 16;
             this.btnInfo.Text = "Come si gioca";
-            this.btnInfo.UseVisualStyleBackColor = true;
+            this.btnInfo.UseVisualStyleBackColor = false;
             this.btnInfo.Click += new System.EventHandler(this.btnInfo_Click);
             // 
             // label7
@@ -242,12 +257,14 @@
             // 
             // btnExtra
             // 
-            this.btnExtra.Location = new System.Drawing.Point(688, 411);
+            this.btnExtra.BackColor = System.Drawing.Color.Transparent;
+            this.btnExtra.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnExtra.Location = new System.Drawing.Point(679, 414);
             this.btnExtra.Name = "btnExtra";
             this.btnExtra.Size = new System.Drawing.Size(75, 62);
             this.btnExtra.TabIndex = 18;
             this.btnExtra.Text = "extra";
-            this.btnExtra.UseVisualStyleBackColor = true;
+            this.btnExtra.UseVisualStyleBackColor = false;
             this.btnExtra.Click += new System.EventHandler(this.btnExtra_Click);
             // 
             // frmSelezionePersonaggio
