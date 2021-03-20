@@ -79,7 +79,7 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(622, 226);
+            this.label3.Location = new System.Drawing.Point(601, 213);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(116, 26);
             this.label3.TabIndex = 5;
@@ -97,7 +97,7 @@
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(178, 439);
+            this.label5.Location = new System.Drawing.Point(196, 416);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(140, 13);
             this.label5.TabIndex = 9;
@@ -106,7 +106,7 @@
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(453, 439);
+            this.label6.Location = new System.Drawing.Point(451, 416);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(183, 13);
             this.label6.TabIndex = 10;
@@ -140,7 +140,7 @@
             // 
             this.btnZar.BackColor = System.Drawing.Color.Transparent;
             this.btnZar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnZar.Location = new System.Drawing.Point(642, 255);
+            this.btnZar.Location = new System.Drawing.Point(626, 242);
             this.btnZar.Name = "btnZar";
             this.btnZar.Size = new System.Drawing.Size(75, 23);
             this.btnZar.TabIndex = 13;
@@ -152,7 +152,7 @@
             // 
             this.btnKaiser.BackColor = System.Drawing.Color.Transparent;
             this.btnKaiser.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnKaiser.Location = new System.Drawing.Point(199, 455);
+            this.btnKaiser.Location = new System.Drawing.Point(204, 434);
             this.btnKaiser.Name = "btnKaiser";
             this.btnKaiser.Size = new System.Drawing.Size(112, 23);
             this.btnKaiser.TabIndex = 14;
@@ -164,7 +164,7 @@
             // 
             this.btnReAp.BackColor = System.Drawing.Color.Transparent;
             this.btnReAp.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnReAp.Location = new System.Drawing.Point(473, 457);
+            this.btnReAp.Location = new System.Drawing.Point(464, 435);
             this.btnReAp.Name = "btnReAp";
             this.btnReAp.Size = new System.Drawing.Size(127, 23);
             this.btnReAp.TabIndex = 15;
@@ -178,7 +178,7 @@
             this.pbReAp.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.pbReAp.Location = new System.Drawing.Point(473, 253);
             this.pbReAp.Name = "pbReAp";
-            this.pbReAp.Size = new System.Drawing.Size(138, 183);
+            this.pbReAp.Size = new System.Drawing.Size(127, 160);
             this.pbReAp.TabIndex = 8;
             this.pbReAp.TabStop = false;
             this.pbReAp.MouseLeave += new System.EventHandler(this.pbReAp_MouseLeave);
@@ -188,9 +188,9 @@
             // 
             this.pbKaiser.BackgroundImage = global::WindowsFormsApp1.Properties.Resources._1200px_Kaiser_Wilhelm_II_of_Germany___1902;
             this.pbKaiser.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.pbKaiser.Location = new System.Drawing.Point(186, 253);
+            this.pbKaiser.Location = new System.Drawing.Point(204, 253);
             this.pbKaiser.Name = "pbKaiser";
-            this.pbKaiser.Size = new System.Drawing.Size(138, 183);
+            this.pbKaiser.Size = new System.Drawing.Size(122, 160);
             this.pbKaiser.TabIndex = 7;
             this.pbKaiser.TabStop = false;
             this.pbKaiser.MouseLeave += new System.EventHandler(this.pbKaiser_MouseLeave);
@@ -200,9 +200,9 @@
             // 
             this.pbZar.BackgroundImage = global::WindowsFormsApp1.Properties.Resources._24f0b2f570780ea9;
             this.pbZar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.pbZar.Location = new System.Drawing.Point(616, 40);
+            this.pbZar.Location = new System.Drawing.Point(593, 40);
             this.pbZar.Name = "pbZar";
-            this.pbZar.Size = new System.Drawing.Size(138, 183);
+            this.pbZar.Size = new System.Drawing.Size(135, 168);
             this.pbZar.TabIndex = 2;
             this.pbZar.TabStop = false;
             this.pbZar.MouseLeave += new System.EventHandler(this.pbZar_MouseLeave);
@@ -215,7 +215,7 @@
             this.pbKing.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.pbKing.Location = new System.Drawing.Point(333, 40);
             this.pbKing.Name = "pbKing";
-            this.pbKing.Size = new System.Drawing.Size(138, 183);
+            this.pbKing.Size = new System.Drawing.Size(135, 170);
             this.pbKing.TabIndex = 1;
             this.pbKing.TabStop = false;
             this.pbKing.MouseLeave += new System.EventHandler(this.pbKing_MouseLeave);
@@ -225,9 +225,9 @@
             // 
             this.pictureBox1.BackgroundImage = global::WindowsFormsApp1.Properties.Resources.Re_Vittorio_Emanuele_III;
             this.pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.pictureBox1.Location = new System.Drawing.Point(62, 40);
+            this.pictureBox1.Location = new System.Drawing.Point(73, 42);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(138, 183);
+            this.pictureBox1.Size = new System.Drawing.Size(121, 168);
             this.pictureBox1.TabIndex = 0;
             this.pictureBox1.TabStop = false;
             this.pictureBox1.MouseLeave += new System.EventHandler(this.pictureBox1_MouseLeave);

@@ -410,6 +410,72 @@ namespace WindowsFormsApp1
                 qtaRiservaBot += 50000;
             }
             gestioneBottoni(true);
+            gestioneGiorno();
+        }
+
+        public void gestioneGiorno()
+        {
+            int giorno=Convert.ToInt32(lblGiorno.Text);
+            int mese = Convert.ToInt32(lblMese.Text);
+            int anno = Convert.ToInt32(lblAnno.Text);
+            if(mese==1||mese==3|| mese == 5 || mese == 7 || mese == 8 || mese == 10 || mese == 12)
+            {
+                if(giorno==31)
+                {
+                    giorno = 1;
+                    if(mese!=12)
+                    {
+                       mese++;
+                    }
+                    else
+                    {
+                        mese = 1;
+                        anno++;
+                    }
+                   
+                }
+                else
+                {
+                   giorno++;
+                }
+            }
+            else
+            {
+                if(mese!=2)
+                {
+                    if (giorno == 30)
+                    {
+                        giorno = 1;
+                        mese++;
+                    }
+                    else
+                    {
+                        giorno++;
+                    }
+                }
+                else
+                {
+                    if (giorno == 28)
+                    {
+                        giorno = 1;
+                        mese++;
+                    }
+                    else
+                    {
+                        giorno++;
+                    }
+                }
+            }
+            lblGiorno.Text = giorno.ToString();
+            if(mese<10)
+            {
+                lblMese.Text ="0"+mese.ToString();
+            }
+            else
+            {
+                lblMese.Text = mese.ToString();
+            }
+            lblAnno.Text = anno.ToString();
         }
 
         private void gestioneBottoni(bool enable)
@@ -461,7 +527,9 @@ namespace WindowsFormsApp1
                     default:
                         break;
                 }
-           }
+                lstMessaggi.Items.Add("Il nemico ci ha attaccato e abbiamo subito 200.000 perdite");
+                morse.Play();
+            }
            else
             {
                 if(diff>=100000)
@@ -484,6 +552,8 @@ namespace WindowsFormsApp1
                         default:
                             break;
                     }
+                    lstMessaggi.Items.Add("Il nemico ci ha attaccato e abbiamo subito 100.000 perdite");
+                    morse.Play();
                 }
                 else
                 {
@@ -505,6 +575,8 @@ namespace WindowsFormsApp1
                         default:
                             break;
                     }
+                    lstMessaggi.Items.Add("Il nemico ci ha attaccato e abbiamo subito 50.000 perdite");
+                    morse.Play();
                 }
             }
 
@@ -569,6 +641,8 @@ namespace WindowsFormsApp1
                     default:
                         break;
                 }
+                lstMessaggi.Items.Add("assalto eseguito con 200.000 perdite");
+                morse.Play();
             }
             else
             {
@@ -592,6 +666,8 @@ namespace WindowsFormsApp1
                         default:
                             break;
                     }
+                    lstMessaggi.Items.Add("assalto eseguito con 100.000 perdite");
+                    morse.Play();
                 }
                 else
                 {
@@ -613,10 +689,12 @@ namespace WindowsFormsApp1
                         default:
                             break;
                     }
+                    lstMessaggi.Items.Add("assalto eseguito con 100.000 perdite");
+                    morse.Play();
                 }
             }
-            lstMessaggi.Items.Add("assalto eseguito");
-            morse.Play();
+            
+           
         }
     }
 }

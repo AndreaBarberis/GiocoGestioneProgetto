@@ -57,6 +57,9 @@
             this.btnAssalta = new System.Windows.Forms.Button();
             this.btnPassa = new System.Windows.Forms.Button();
             this.cmbFronte = new System.Windows.Forms.ComboBox();
+            this.lblGiorno = new System.Windows.Forms.Label();
+            this.lblMese = new System.Windows.Forms.Label();
+            this.lblAnno = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // txtTruppeDisponibili
@@ -352,6 +355,33 @@
             this.cmbFronte.Size = new System.Drawing.Size(121, 21);
             this.cmbFronte.TabIndex = 28;
             // 
+            // lblGiorno
+            // 
+            this.lblGiorno.AutoSize = true;
+            this.lblGiorno.Location = new System.Drawing.Point(698, 23);
+            this.lblGiorno.Name = "lblGiorno";
+            this.lblGiorno.Size = new System.Drawing.Size(19, 13);
+            this.lblGiorno.TabIndex = 29;
+            this.lblGiorno.Text = "28";
+            // 
+            // lblMese
+            // 
+            this.lblMese.AutoSize = true;
+            this.lblMese.Location = new System.Drawing.Point(736, 23);
+            this.lblMese.Name = "lblMese";
+            this.lblMese.Size = new System.Drawing.Size(19, 13);
+            this.lblMese.TabIndex = 30;
+            this.lblMese.Text = "07";
+            // 
+            // lblAnno
+            // 
+            this.lblAnno.AutoSize = true;
+            this.lblAnno.Location = new System.Drawing.Point(778, 23);
+            this.lblAnno.Name = "lblAnno";
+            this.lblAnno.Size = new System.Drawing.Size(31, 13);
+            this.lblAnno.TabIndex = 31;
+            this.lblAnno.Text = "1914";
+            // 
             // frmCampoGioco
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -360,6 +390,9 @@
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(915, 518);
             this.ControlBox = false;
+            this.Controls.Add(this.lblAnno);
+            this.Controls.Add(this.lblMese);
+            this.Controls.Add(this.lblGiorno);
             this.Controls.Add(this.cmbFronte);
             this.Controls.Add(this.btnPassa);
             this.Controls.Add(this.btnAssalta);
@@ -430,5 +463,8 @@
         private System.Windows.Forms.Button btnAssalta;
         private System.Windows.Forms.Button btnPassa;
         private System.Windows.Forms.ComboBox cmbFronte;
+        private System.Windows.Forms.Label lblGiorno;
+        private System.Windows.Forms.Label lblMese;
+        private System.Windows.Forms.Label lblAnno;
     }
 }
