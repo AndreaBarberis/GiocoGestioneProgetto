@@ -529,6 +529,7 @@ namespace WindowsFormsApp1
                 }
                 lstMessaggi.Items.Add("Il nemico ci ha attaccato e abbiamo subito 200.000 perdite");
                 morse.Play();
+               
             }
            else
             {

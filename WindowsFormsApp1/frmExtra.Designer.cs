@@ -36,32 +36,40 @@
             // 
             // btnAB
             // 
+            this.btnAB.BackColor = System.Drawing.Color.Transparent;
+            this.btnAB.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnAB.Location = new System.Drawing.Point(44, 66);
             this.btnAB.Name = "btnAB";
             this.btnAB.Size = new System.Drawing.Size(196, 44);
             this.btnAB.TabIndex = 0;
             this.btnAB.Text = "La Prima Guerra Mondiale di Alessandro Barbero";
-            this.btnAB.UseVisualStyleBackColor = true;
+            this.btnAB.UseVisualStyleBackColor = false;
             this.btnAB.Click += new System.EventHandler(this.btnAB_Click);
             // 
             // btnPlaylist
             // 
+            this.btnPlaylist.BackColor = System.Drawing.Color.Transparent;
+            this.btnPlaylist.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btnPlaylist.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.btnPlaylist.Location = new System.Drawing.Point(44, 144);
             this.btnPlaylist.Name = "btnPlaylist";
             this.btnPlaylist.Size = new System.Drawing.Size(196, 44);
             this.btnPlaylist.TabIndex = 1;
             this.btnPlaylist.Text = "Soundtrack playlist";
-            this.btnPlaylist.UseVisualStyleBackColor = true;
+            this.btnPlaylist.UseVisualStyleBackColor = false;
             this.btnPlaylist.Click += new System.EventHandler(this.btnPlaylist_Click);
             // 
             // btnWeb
             // 
+            this.btnWeb.BackColor = System.Drawing.Color.Transparent;
+            this.btnWeb.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btnWeb.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.btnWeb.Location = new System.Drawing.Point(44, 222);
             this.btnWeb.Name = "btnWeb";
             this.btnWeb.Size = new System.Drawing.Size(196, 44);
             this.btnWeb.TabIndex = 2;
             this.btnWeb.Text = "Pagina Web";
-            this.btnWeb.UseVisualStyleBackColor = true;
+            this.btnWeb.UseVisualStyleBackColor = false;
             this.btnWeb.Click += new System.EventHandler(this.btnWeb_Click);
             // 
             // frmExtra
