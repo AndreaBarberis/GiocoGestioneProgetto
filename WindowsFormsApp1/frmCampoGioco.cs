@@ -73,7 +73,7 @@ namespace WindowsFormsApp1
 
         private void frmCampoGioco_Load(object sender, EventArgs e)
         {
-          playlist.Play(); //caricamento della playlist
+          //playlist.Play(); //caricamento della playlist
         }
 
         private void btnEsci_Click(object sender, EventArgs e)
@@ -91,7 +91,7 @@ namespace WindowsFormsApp1
             }
             else //se non è attiva la faccio ripartire
             {
-                playlist.Play();
+               // playlist.Play();
                 sound = 1;
             }
         }
@@ -179,22 +179,22 @@ namespace WindowsFormsApp1
                         lstMessaggi.Items.Add("Sono state spostate " + txtSelezRiserve.Text + " truppe al Fronte nord");
                         morse.Play();
                         qtaRiservaUtente = qtaRiservaUtente - Convert.ToInt32(txtSelezRiserve.Text);
-                        txtTruppeDisponibili.Text = (Convert.ToInt32(txtTruppeDisponibili.Text)-Convert.ToInt64(txtSelezRiserve.Text)).ToString();
+                        txtTruppeDisponibili.Text = qtaRiservaUtente.ToString();
                         break;
                     case "Centro":
                         txtF2.Text = (Convert.ToInt32(txtF2.Text) + Convert.ToInt32(txtSelezRiserve.Text)).ToString();
                         lstMessaggi.Items.Add("Sono state spostate " + txtSelezRiserve.Text + " truppe al Fronte centrale");
                         morse.Play();
                         qtaRiservaUtente = qtaRiservaUtente - Convert.ToInt32(txtSelezRiserve.Text);
-                        txtTruppeDisponibili.Text = (Convert.ToInt32(txtTruppeDisponibili.Text) - Convert.ToInt64(txtSelezRiserve.Text)).ToString();
+                        txtTruppeDisponibili.Text = qtaRiservaUtente.ToString();
                         break;
                     case "Sud":
                         txtF3.Text = (Convert.ToInt32(txtF3.Text) + Convert.ToInt32(txtSelezRiserve.Text)).ToString();
                         lstMessaggi.Items.Add("Sono state spostate " + txtSelezRiserve.Text + " truppe al Fronte sud");
                         morse.Play();
                         qtaRiservaUtente = qtaRiservaUtente - Convert.ToInt32(txtSelezRiserve.Text);
-                        txtTruppeDisponibili.Text = (Convert.ToInt32(txtTruppeDisponibili.Text) - Convert.ToInt64(txtSelezRiserve.Text)).ToString();
-                        
+                        txtTruppeDisponibili.Text = qtaRiservaUtente.ToString();
+
                         break;
                     default:
                         MessageBox.Show("Selezionare fronte: nord - centro - sud");
@@ -289,6 +289,7 @@ namespace WindowsFormsApp1
                     trnUtente = 3;
                 }
                 qtaRiservaUtente += 50000;
+                txtTruppeDisponibili.Text = qtaRiservaUtente.ToString();
             }
             gestioneBottoni(false);
             rndsceltaIniz = new Random();
@@ -521,7 +522,7 @@ namespace WindowsFormsApp1
                         fCentro = fCentro - 200000;
                         break;
                     case 3:
-                        txtF3.Text = (Convert.ToInt32(txtF2.Text) - diff).ToString();
+                        txtF3.Text = (Convert.ToInt32(txtF3.Text) - diff).ToString();
                         fSud = fSud - 200000;
                         break;
                     default:
@@ -547,7 +548,7 @@ namespace WindowsFormsApp1
                             fCentro = fCentro - 200000;
                             break;
                         case 3:
-                            txtF3.Text = (Convert.ToInt32(txtF2.Text) - 100000).ToString();
+                            txtF3.Text = (Convert.ToInt32(txtF3.Text) - 100000).ToString();
                             fCentro = fCentro - 200000;
                             break;
                         default:
@@ -570,7 +571,7 @@ namespace WindowsFormsApp1
                             fSud = fSud - 100000;
                             break;
                         case 3:
-                            txtF3.Text = (Convert.ToInt32(txtF2.Text) - 50000).ToString();
+                            txtF3.Text = (Convert.ToInt32(txtF3.Text) - 50000).ToString();
                             fCentro = fCentro - 100000;
                             break;
                         default:

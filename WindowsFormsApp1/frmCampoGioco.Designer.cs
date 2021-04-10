@@ -60,6 +60,8 @@
             this.lblGiorno = new System.Windows.Forms.Label();
             this.lblMese = new System.Windows.Forms.Label();
             this.lblAnno = new System.Windows.Forms.Label();
+            this.label9 = new System.Windows.Forms.Label();
+            this.label10 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // txtTruppeDisponibili
@@ -358,6 +360,8 @@
             // lblGiorno
             // 
             this.lblGiorno.AutoSize = true;
+            this.lblGiorno.BackColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.lblGiorno.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.lblGiorno.Location = new System.Drawing.Point(698, 23);
             this.lblGiorno.Name = "lblGiorno";
             this.lblGiorno.Size = new System.Drawing.Size(19, 13);
@@ -367,6 +371,8 @@
             // lblMese
             // 
             this.lblMese.AutoSize = true;
+            this.lblMese.BackColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.lblMese.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.lblMese.Location = new System.Drawing.Point(736, 23);
             this.lblMese.Name = "lblMese";
             this.lblMese.Size = new System.Drawing.Size(19, 13);
@@ -376,11 +382,35 @@
             // lblAnno
             // 
             this.lblAnno.AutoSize = true;
+            this.lblAnno.BackColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.lblAnno.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.lblAnno.Location = new System.Drawing.Point(778, 23);
             this.lblAnno.Name = "lblAnno";
             this.lblAnno.Size = new System.Drawing.Size(31, 13);
             this.lblAnno.TabIndex = 31;
             this.lblAnno.Text = "1914";
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.BackColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.label9.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.label9.Location = new System.Drawing.Point(723, 23);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(10, 13);
+            this.label9.TabIndex = 32;
+            this.label9.Text = "-";
+            // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.BackColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.label10.ForeColor = System.Drawing.SystemColors.ControlLight;
+            this.label10.Location = new System.Drawing.Point(762, 23);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(10, 13);
+            this.label10.TabIndex = 33;
+            this.label10.Text = "-";
             // 
             // frmCampoGioco
             // 
@@ -390,6 +420,8 @@
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(915, 518);
             this.ControlBox = false;
+            this.Controls.Add(this.label10);
+            this.Controls.Add(this.label9);
             this.Controls.Add(this.lblAnno);
             this.Controls.Add(this.lblMese);
             this.Controls.Add(this.lblGiorno);
@@ -466,5 +498,7 @@
         private System.Windows.Forms.Label lblGiorno;
         private System.Windows.Forms.Label lblMese;
         private System.Windows.Forms.Label lblAnno;
+        private System.Windows.Forms.Label label9;
+        private System.Windows.Forms.Label label10;
     }
 }
