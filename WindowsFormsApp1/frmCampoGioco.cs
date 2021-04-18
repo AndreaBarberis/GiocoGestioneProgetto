@@ -20,10 +20,12 @@ namespace WindowsFormsApp1
         int discUtente = 2; //disciplina utente
         int trnUtente = 3; //turni x rifornimento ad utente
         int trnUtenteMalus =2; //contatore per il malus dei turni dell'utente dopo aver selezionato l'azione di sabotaggio
+        int trnUtenteBonus = 2;
         int ptnAzioni=0; //punti azioni utente
         int UtBonus = 3; //utilizzato per il bonus di Vittorio Emanuele
         string bonus; //per sapere il bonus scelto dall'utente
         bool malusUtente = false;
+        bool utenteBonus = false;
         /*VARIABILI BOT*/
         int qtaBot = 3000000; //quantità truppe in generale
         int qtaRiservaBot=0; //riserva del bot
@@ -228,6 +230,7 @@ namespace WindowsFormsApp1
                     lstMessaggi.Items.Add("Rifornimenti di truppe più veloci");
                     morse.Play();
                     btnBonus.Enabled = false;
+                    utenteBonus = true;
                     break;
                 case "comb":
                     cmbUtente++;
@@ -286,7 +289,24 @@ namespace WindowsFormsApp1
                 }
                 else
                 {
-                    trnUtente = 3;
+                    if(utenteBonus==true)
+                    {
+                        if(trnUtenteBonus>0)
+                        {
+                            trnUtenteBonus--;
+                            trnUtente = 2;
+                        }
+                        else
+                        {
+                            utenteBonus = false;
+                            trnUtenteBonus = 2;
+                            trnUtente = 3;
+                        }
+                    }
+                    else
+                    {
+                        trnUtente = 3;
+                    }
                 }
                 qtaRiservaUtente += 50000;
                 txtTruppeDisponibili.Text = qtaRiservaUtente.ToString();
