@@ -45,6 +45,7 @@ namespace WindowsFormsApp1
         SoundPlayer playlist = new SoundPlayer(@"playlist.wav");
         SoundPlayer morse = new SoundPlayer(@"morse.wav");
         int sound = 1;
+        int messageSound = 0;
         public frmCampoGioco()
         {
             InitializeComponent();
@@ -90,11 +91,13 @@ namespace WindowsFormsApp1
             {
                 playlist.Stop();
                 sound = 0;
+                messageSound = 1;
             }
             else //se non è attiva la faccio ripartire
             {
                // playlist.Play();
                 sound = 1;
+                messageSound = 0;
             }
         }
 
@@ -147,7 +150,7 @@ namespace WindowsFormsApp1
                     default:
                         break;
                 }
-                morse.Play();
+                playSuono();    
                 lstMessaggi.Items.Add("Disciplina e combattività aumentati");
             }
             else
@@ -156,7 +159,7 @@ namespace WindowsFormsApp1
                 {
                     trnBot += 2;
                     malusBot = true;
-                    morse.Play();
+                    playSuono();
                     lstMessaggi.Items.Add("Turni più lenti per il nemico");
                 }
                 else if(az=="spia")
@@ -164,36 +167,38 @@ namespace WindowsFormsApp1
                     lbl1.Text = fNord.ToString();
                     lbl2.Text = fCentro.ToString();
                     lbl3.Text = fSud.ToString();
-                    morse.Play();
+                    playSuono();
                     lstMessaggi.Items.Add("Truppe nemiche ora visibili su mappa");
                 }
             }
         }
 
+       
+
         private void btnSposta_Click(object sender, EventArgs e)
         {
             if(Convert.ToInt32(txtSelezRiserve.Text)<=Convert.ToInt32(txtTruppeDisponibili.Text)) //se il numero scelto è possibile
             {
-                switch (cmbFronte.SelectedItem) 
+                switch (cmbFronte.SelectedItem.ToString()) 
                 {
                     case "Nord":
                         txtF1.Text = (Convert.ToInt32(txtF1.Text) + Convert.ToInt32(txtSelezRiserve.Text)).ToString();
                         lstMessaggi.Items.Add("Sono state spostate " + txtSelezRiserve.Text + " truppe al Fronte nord");
-                        morse.Play();
+                        playSuono();
                         qtaRiservaUtente = qtaRiservaUtente - Convert.ToInt32(txtSelezRiserve.Text);
                         txtTruppeDisponibili.Text = qtaRiservaUtente.ToString();
                         break;
                     case "Centro":
                         txtF2.Text = (Convert.ToInt32(txtF2.Text) + Convert.ToInt32(txtSelezRiserve.Text)).ToString();
                         lstMessaggi.Items.Add("Sono state spostate " + txtSelezRiserve.Text + " truppe al Fronte centrale");
-                        morse.Play();
+                        playSuono();
                         qtaRiservaUtente = qtaRiservaUtente - Convert.ToInt32(txtSelezRiserve.Text);
                         txtTruppeDisponibili.Text = qtaRiservaUtente.ToString();
                         break;
                     case "Sud":
                         txtF3.Text = (Convert.ToInt32(txtF3.Text) + Convert.ToInt32(txtSelezRiserve.Text)).ToString();
                         lstMessaggi.Items.Add("Sono state spostate " + txtSelezRiserve.Text + " truppe al Fronte sud");
-                        morse.Play();
+                        playSuono();
                         qtaRiservaUtente = qtaRiservaUtente - Convert.ToInt32(txtSelezRiserve.Text);
                         txtTruppeDisponibili.Text = qtaRiservaUtente.ToString();
 
@@ -218,7 +223,7 @@ namespace WindowsFormsApp1
                     txtTruppeDisponibili.Text = (Convert.ToInt32(txtTruppeDisponibili.Text) + 50000).ToString();
                     qtaRiservaUtente = Convert.ToInt32(txtTruppeDisponibili.Text);
                     lstMessaggi.Items.Add("Aggiunti "+50000+" soldati alla riserva");
-                    morse.Play();
+                    playSuono();
                     UtBonus--;
                     if(UtBonus==0) //lo posso fare fino a 3 volte
                     {
@@ -228,7 +233,7 @@ namespace WindowsFormsApp1
                 case "rif":
                     trnUtente--;
                     lstMessaggi.Items.Add("Rifornimenti di truppe più veloci");
-                    morse.Play();
+                    playSuono();
                     btnBonus.Enabled = false;
                     utenteBonus = true;
                     break;
@@ -249,17 +254,18 @@ namespace WindowsFormsApp1
                             break;
                     }
                     lstMessaggi.Items.Add("Combattività aumentata");
-                    morse.Play();
+                    playSuono();
                     btnBonus.Enabled = false;
                     break;
                 case "az":
                     ptnAzioni=ptnAzioni+2;
                     lstMessaggi.Items.Add("Punti azioni aggiunti");
-                    morse.Play();
+                    playSuono();
                     btnBonus.Enabled = false;
                     break;
                 default:
                     lstMessaggi.Items.Add("Bonus non disponibile");
+                    playSuono();
                     btnBonus.Enabled = false;
                     break;
             }
@@ -323,7 +329,7 @@ namespace WindowsFormsApp1
                         {
                             fNord += rndQtaTruppe.Next(10000, qtaRiservaBot / 2);
                             lstMessaggi.Items.Add("Il nemico ha spostato delle truppe al fronte Nord");
-                            morse.Play();
+                            playSuono();
                         }
                         else
                         {
@@ -331,13 +337,13 @@ namespace WindowsFormsApp1
                             {
                                 fSud += rndQtaTruppe.Next(10000, qtaRiservaBot / 2);
                                 lstMessaggi.Items.Add("Il nemico ha spostato delle truppe al fronte Sud");
-                                morse.Play();
+                                playSuono();
                             }
                             else
                             {
                                 fCentro += rndQtaTruppe.Next(10000, qtaRiservaBot / 2);
                                 lstMessaggi.Items.Add("Il nemico ha spostato delle truppe al fronte Centrale");
-                                morse.Play();
+                                playSuono();
                             }
                         }
                     }
@@ -549,8 +555,8 @@ namespace WindowsFormsApp1
                         break;
                 }
                 lstMessaggi.Items.Add("Il nemico ci ha attaccato e abbiamo subito 200.000 perdite");
-                morse.Play();
-               
+                playSuono();
+
             }
            else
             {
@@ -575,7 +581,7 @@ namespace WindowsFormsApp1
                             break;
                     }
                     lstMessaggi.Items.Add("Il nemico ci ha attaccato e abbiamo subito 100.000 perdite");
-                    morse.Play();
+                    playSuono();
                 }
                 else
                 {
@@ -598,7 +604,7 @@ namespace WindowsFormsApp1
                             break;
                     }
                     lstMessaggi.Items.Add("Il nemico ci ha attaccato e abbiamo subito 50.000 perdite");
-                    morse.Play();
+                    playSuono();
                 }
             }
 
@@ -606,7 +612,7 @@ namespace WindowsFormsApp1
 
         private void btnAssalta_Click(object sender, EventArgs e)
         {
-            switch (cmbFronte.SelectedItem)
+            switch (cmbFronte.SelectedItem.ToString())
             {
                 case "Nord":
                     assalto("f1", Convert.ToInt32(txtF1.Text));
@@ -664,7 +670,7 @@ namespace WindowsFormsApp1
                         break;
                 }
                 lstMessaggi.Items.Add("assalto eseguito con 200.000 perdite");
-                morse.Play();
+                playSuono();
             }
             else
             {
@@ -689,7 +695,7 @@ namespace WindowsFormsApp1
                             break;
                     }
                     lstMessaggi.Items.Add("assalto eseguito con 100.000 perdite");
-                    morse.Play();
+                    playSuono();
                 }
                 else
                 {
@@ -712,11 +718,17 @@ namespace WindowsFormsApp1
                             break;
                     }
                     lstMessaggi.Items.Add("assalto eseguito con 100.000 perdite");
-                    morse.Play();
+                    playSuono();
                 }
             }
-            
-           
+        }
+
+        private void playSuono()
+        {
+            if (messageSound == 1)
+            {
+                morse.Play();
+            }
         }
     }
 }
