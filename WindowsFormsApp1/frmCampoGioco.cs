@@ -76,7 +76,7 @@ namespace WindowsFormsApp1
 
         private void frmCampoGioco_Load(object sender, EventArgs e)
         {
-          //playlist.Play(); //caricamento della playlist
+          playlist.Play(); //caricamento della playlist
         }
 
         private void btnEsci_Click(object sender, EventArgs e)
@@ -95,7 +95,7 @@ namespace WindowsFormsApp1
             }
             else //se non è attiva la faccio ripartire
             {
-               // playlist.Play();
+                playlist.Play();
                 sound = 1;
                 messageSound = 0;
             }
@@ -369,20 +369,21 @@ namespace WindowsFormsApp1
                         {
                             if (f == 2)
                             {
-                                if (fSud > 100000)
-                                {
-                                    qta = rndQtaTruppe.Next(50000, fSud / 2);
-                                }
-                            }
-                            else
-                            {
                                 if (fCentro > 100000)
                                 {
                                     qta = rndQtaTruppe.Next(50000, fCentro / 2);
                                 }
                             }
+                            else
+                            {
+                                if (fSud > 100000)
+                                {
+                                    qta = rndQtaTruppe.Next(50000, fSud / 2);
+                                }
+                            }
                         }
                         assaltoBot(f, qta);
+                        vincitaBot(f);
                     }
                     break;
                 case 3: //azioni
@@ -438,6 +439,36 @@ namespace WindowsFormsApp1
             }
             gestioneBottoni(true);
             gestioneGiorno();
+        }
+
+        private void vincitaBot(int fronte)
+        {
+            switch (fronte)
+            {
+                case 1:
+                    if (fNord == 0)
+                    {
+                        MessageBox.Show("Hanno sfondato a nord, ogni speranza è persa");
+                        this.Close();
+                    }
+                    break;
+                case 2:
+                    if (fCentro == 0)
+                    {
+                        MessageBox.Show("Hanno sfondato al centro, ogni speranza è persa");
+                        this.Close();
+                    }
+                    break;
+                case 3:
+                    if (fSud == 0)
+                    {
+                        MessageBox.Show("Hanno sfondato a sud, ogni speranza è persa");
+                        this.Close();
+                    }
+                    break;
+                default:
+                    break;
+            }
         }
 
         public void gestioneGiorno()
@@ -516,7 +547,7 @@ namespace WindowsFormsApp1
 
         private void assaltoBot(int f, int qtaBot)
         {
-            int totBot = qtaBot * discBot * cmbUtente;
+            int totBot = qtaBot * discBot * cmbBot;
             int totUser = 0;
             int diff;
             switch (f)
@@ -616,15 +647,48 @@ namespace WindowsFormsApp1
             {
                 case "Nord":
                     assalto("f1", Convert.ToInt32(txtF1.Text));
+                    vincita("f1");
                     break;
                 case "Centro":
                     assalto("f2", Convert.ToInt32(txtF2.Text));
+                    vincita("f2");
                     break;
                 case "Sud":
                     assalto("f3", Convert.ToInt32(txtF3.Text));
+                    vincita("f3");
                     break;
                 default:
                     MessageBox.Show("Selezionare fronte: nord - centro - sud");
+                    break;
+            }
+        }
+
+        private void vincita(string fronte)
+        {
+            switch (fronte)
+            {
+                case "f1":
+                    if(fNord==0)
+                    {
+                        MessageBox.Show("Abbiamo sfondato a nord, accerchiremo il nemico e vinceremo");
+                        this.Close();
+                    }
+                    break;
+                case "f2":
+                    if (fCentro == 0)
+                    {
+                        MessageBox.Show("Abbiamo sfondato a centro, accerchiremo il nemico e vinceremo");
+                        this.Close();
+                    }
+                    break;
+                case "f3":
+                    if (fSud == 0)
+                    {
+                        MessageBox.Show("Abbiamo sfondato a sud, accerchiremo il nemico e vinceremo");
+                        this.Close();
+                    }
+                    break;
+                default:
                     break;
             }
         }
