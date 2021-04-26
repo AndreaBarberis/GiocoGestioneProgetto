@@ -448,21 +448,24 @@ namespace WindowsFormsApp1
                 case 1:
                     if (fNord == 0)
                     {
-                        MessageBox.Show("Hanno sfondato a nord, ogni speranza è persa");
+                        frmLost lost = new frmLost(lblAnno.Text);
+                        lost.ShowDialog();
                         this.Close();
                     }
                     break;
                 case 2:
                     if (fCentro == 0)
                     {
-                        MessageBox.Show("Hanno sfondato al centro, ogni speranza è persa");
+                        frmLost lost = new frmLost(lblAnno.Text);
+                        lost.ShowDialog();
                         this.Close();
                     }
                     break;
                 case 3:
                     if (fSud == 0)
                     {
-                        MessageBox.Show("Hanno sfondato a sud, ogni speranza è persa");
+                        frmLost lost = new frmLost(lblAnno.Text);
+                        lost.ShowDialog();
                         this.Close();
                     }
                     break;
@@ -670,21 +673,24 @@ namespace WindowsFormsApp1
                 case "f1":
                     if(fNord==0)
                     {
-                        MessageBox.Show("Abbiamo sfondato a nord, accerchiremo il nemico e vinceremo");
+                        victory f = new victory(lblAnno.Text);
+                        f.ShowDialog();
                         this.Close();
                     }
                     break;
                 case "f2":
                     if (fCentro == 0)
                     {
-                        MessageBox.Show("Abbiamo sfondato a centro, accerchiremo il nemico e vinceremo");
+                        victory f = new victory(lblAnno.Text);
+                        f.ShowDialog();
                         this.Close();
                     }
                     break;
                 case "f3":
                     if (fSud == 0)
                     {
-                        MessageBox.Show("Abbiamo sfondato a sud, accerchiremo il nemico e vinceremo");
+                        victory f = new victory(lblAnno.Text);
+                        f.ShowDialog();
                         this.Close();
                     }
                     break;
@@ -793,6 +799,12 @@ namespace WindowsFormsApp1
             {
                 morse.Play();
             }
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            frmLost lost = new frmLost(lblAnno.Text);
+            lost.ShowDialog();
         }
     }
 }
