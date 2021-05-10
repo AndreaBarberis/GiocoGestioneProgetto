@@ -590,6 +590,7 @@ namespace WindowsFormsApp1
                 }
                 lstMessaggi.Items.Add("Il nemico ci ha attaccato e abbiamo subito 200.000 perdite");
                 playSuono();
+                gestioneBottoni(false);
 
             }
            else
@@ -616,6 +617,7 @@ namespace WindowsFormsApp1
                     }
                     lstMessaggi.Items.Add("Il nemico ci ha attaccato e abbiamo subito 100.000 perdite");
                     playSuono();
+                    gestioneBottoni(false);
                 }
                 else
                 {
@@ -639,6 +641,7 @@ namespace WindowsFormsApp1
                     }
                     lstMessaggi.Items.Add("Il nemico ci ha attaccato e abbiamo subito 50.000 perdite");
                     playSuono();
+                    gestioneBottoni(false);
                 }
             }
 
@@ -733,7 +736,7 @@ namespace WindowsFormsApp1
                         fCentro = fCentro - 200000;
                         break;
                     case "f3":
-                        txtF1.Text = qta.ToString();
+                        txtF3.Text = qta.ToString();
                         fSud = fSud - 200000;
                         break;
                     default:
@@ -758,7 +761,7 @@ namespace WindowsFormsApp1
                             fCentro = fCentro - 100000;
                             break;
                         case "f3":
-                            txtF1.Text = qta.ToString();
+                            txtF3.Text = qta.ToString();
                             fSud = fSud - 100000;
                             break;
                         default:
@@ -781,7 +784,7 @@ namespace WindowsFormsApp1
                             fCentro = fCentro - 50000;
                             break;
                         case "f3":
-                            txtF1.Text = qta.ToString();
+                            txtF3.Text = qta.ToString();
                             fSud = fSud - 50000;
                             break;
                         default:
@@ -805,6 +808,12 @@ namespace WindowsFormsApp1
         {
             frmLost lost = new frmLost(lblAnno.Text);
             lost.ShowDialog();
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            victory v = new victory(lblAnno.Text);
+            v.ShowDialog();
         }
     }
 }
