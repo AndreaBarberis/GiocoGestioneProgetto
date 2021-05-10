@@ -284,13 +284,14 @@ namespace WindowsFormsApp1
                     {
                         trnUtenteMalus--;
                         trnUtente = 5;
+                        
                     }
                     else
                     {
                         malusUtente = false;
                         trnUtenteMalus = 2;
                         trnUtente = 3;
-
+                       
                     }
                 }
                 else
@@ -301,12 +302,14 @@ namespace WindowsFormsApp1
                         {
                             trnUtenteBonus--;
                             trnUtente = 2;
+                           
                         }
                         else
                         {
                             utenteBonus = false;
                             trnUtenteBonus = 2;
                             trnUtente = 3;
+                           
                         }
                     }
                     else
@@ -316,6 +319,7 @@ namespace WindowsFormsApp1
                 }
                 qtaRiservaUtente += 50000;
                 txtTruppeDisponibili.Text = qtaRiservaUtente.ToString();
+                ptnAzioni++;
             }
             gestioneBottoni(false);
             rndsceltaIniz = new Random();
@@ -436,6 +440,7 @@ namespace WindowsFormsApp1
                     trnBot = 3;
                 }
                 qtaRiservaBot += 50000;
+                ptnAzioneBot++;
             }
             gestioneBottoni(true);
             gestioneGiorno();
@@ -446,7 +451,7 @@ namespace WindowsFormsApp1
             switch (fronte)
             {
                 case 1:
-                    if (fNord == 0)
+                    if (Convert.ToInt32(txtF1.Text) <= 0)
                     {
                         frmLost lost = new frmLost(lblAnno.Text);
                         lost.ShowDialog();
@@ -454,7 +459,7 @@ namespace WindowsFormsApp1
                     }
                     break;
                 case 2:
-                    if (fCentro == 0)
+                    if (Convert.ToInt32(txtF2.Text) <= 0)
                     {
                         frmLost lost = new frmLost(lblAnno.Text);
                         lost.ShowDialog();
@@ -462,7 +467,7 @@ namespace WindowsFormsApp1
                     }
                     break;
                 case 3:
-                    if (fSud == 0)
+                    if (Convert.ToInt32(txtF3.Text) <= 0)
                     {
                         frmLost lost = new frmLost(lblAnno.Text);
                         lost.ShowDialog();
@@ -674,7 +679,7 @@ namespace WindowsFormsApp1
             switch (fronte)
             {
                 case "f1":
-                    if(fNord==0)
+                    if(fNord<=0)
                     {
                         victory f = new victory(lblAnno.Text);
                         f.ShowDialog();
@@ -682,7 +687,7 @@ namespace WindowsFormsApp1
                     }
                     break;
                 case "f2":
-                    if (fCentro == 0)
+                    if (fCentro <= 0)
                     {
                         victory f = new victory(lblAnno.Text);
                         f.ShowDialog();
@@ -690,7 +695,7 @@ namespace WindowsFormsApp1
                     }
                     break;
                 case "f3":
-                    if (fSud == 0)
+                    if (fSud <= 0)
                     {
                         victory f = new victory(lblAnno.Text);
                         f.ShowDialog();
