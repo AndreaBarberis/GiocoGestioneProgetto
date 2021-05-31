@@ -52,40 +52,40 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Bernard MT Condensed", 15F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.Location = new System.Drawing.Point(47, 62);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(294, 24);
+            this.label1.Size = new System.Drawing.Size(321, 25);
             this.label1.TabIndex = 1;
             this.label1.Text = "Il nemico ha sfondato le nostre linee";
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Bernard MT Condensed", 15F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.Location = new System.Drawing.Point(47, 283);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(430, 24);
+            this.label2.Size = new System.Drawing.Size(475, 25);
             this.label2.TabIndex = 2;
             this.label2.Text = "Il nostro esercito è disfatto, non oppone più resistenza";
             // 
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Bernard MT Condensed", 15F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.Location = new System.Drawing.Point(47, 439);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(382, 24);
+            this.label3.Size = new System.Drawing.Size(411, 25);
             this.label3.TabIndex = 3;
             this.label3.Text = "Prevediamo tempi duri per tutta la popolazione";
             // 
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Bernard MT Condensed", 20F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.Location = new System.Drawing.Point(428, 570);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(68, 31);
+            this.label4.Size = new System.Drawing.Size(83, 31);
             this.label4.TabIndex = 4;
             this.label4.Text = "1914-";
             // 

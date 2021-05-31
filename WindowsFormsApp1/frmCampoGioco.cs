@@ -320,6 +320,9 @@ namespace WindowsFormsApp1
                 qtaRiservaUtente += 50000;
                 txtTruppeDisponibili.Text = qtaRiservaUtente.ToString();
                 ptnAzioni++;
+                cmbUtente--;
+                discUtente--;
+                controlloOpzioni(cmbUtente, discUtente);
             }
             gestioneBottoni(false);
             rndsceltaIniz = new Random();
@@ -389,6 +392,8 @@ namespace WindowsFormsApp1
                         assaltoBot(f, qta);
                         vincitaBot(f);
                     }
+                    else
+                        goto case 3;
                     break;
                 case 3: //azioni
                     if (ptnAzioneBot >= 3)
@@ -444,6 +449,38 @@ namespace WindowsFormsApp1
             }
             gestioneBottoni(true);
             gestioneGiorno();
+        }
+
+        private void controlloOpzioni(int cmbUtente, int discUtente)
+        {
+            switch (cmbUtente)
+            {
+                case 3:
+                    txtComb.Text = "Alta";
+                    break;
+                case 2:
+                    txtComb.Text = "Nella media";
+                    break;
+                case 1:
+                    txtComb.Text = "Bassa";
+                    break;
+                default:
+                    break;
+            }
+            switch (discUtente)
+            {
+                case 3:
+                    txtDisc.Text = "Alta";
+                    break;
+                case 2:
+                    txtDisc.Text = "Nella media";
+                    break;
+                case 1:
+                    txtDisc.Text = "Bassa";
+                    break;
+                default:
+                    break;
+            }
         }
 
         private void vincitaBot(int fronte)
@@ -549,7 +586,6 @@ namespace WindowsFormsApp1
             btnAssalta.Enabled = enable;
             btnAzioni.Enabled = enable;
             btnBonus.Enabled = enable;
-            btnPassa.Enabled = enable;
             btnSposta.Enabled = enable;
         }
 
@@ -672,6 +708,7 @@ namespace WindowsFormsApp1
                     MessageBox.Show("Selezionare fronte: nord - centro - sud");
                     break;
             }
+            gestioneBottoni(false);
         }
 
         private void vincita(string fronte)
