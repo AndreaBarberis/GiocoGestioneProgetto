@@ -675,7 +675,7 @@ namespace WindowsFormsApp1
                     playSuono();
                     gestioneBottoni(false);
                 }
-                else
+                else if(diff>=0)
                 {
                     qtaBot = qtaBot - 100000;
                     switch (f)
@@ -691,6 +691,30 @@ namespace WindowsFormsApp1
                         case 3:
                             txtF3.Text = (Convert.ToInt32(txtF3.Text) - 50000).ToString();
                             fCentro = fCentro - 100000;
+                            break;
+                        default:
+                            break;
+                    }
+                    lstMessaggi.Items.Add("Il nemico ci ha attaccato e abbiamo subito 50.000 perdite");
+                    playSuono();
+                    gestioneBottoni(false);
+                }
+                else
+                {
+                    qtaBot = qtaBot - 150000;
+                    switch (f)
+                    {
+                        case 1:
+                            txtF1.Text = (Convert.ToInt32(txtF1.Text) - 50000).ToString();
+                            fNord = fNord - 150000;
+                            break;
+                        case 2:
+                            txtF2.Text = (Convert.ToInt32(txtF2.Text) - 50000).ToString();
+                            fSud = fSud - 150000;
+                            break;
+                        case 3:
+                            txtF3.Text = (Convert.ToInt32(txtF3.Text) - 50000).ToString();
+                            fCentro = fCentro - 150000;
                             break;
                         default:
                             break;
@@ -778,7 +802,7 @@ namespace WindowsFormsApp1
                 default:
                     break;
             }
-            diff = totBot - totUser;
+            diff = totUser - totBot;
             if (diff >= 200000)
             {
                 qta = qta - 200000;
@@ -827,7 +851,7 @@ namespace WindowsFormsApp1
                     lstMessaggi.Items.Add("assalto eseguito con 100.000 perdite");
                     playSuono();
                 }
-                else
+                else if(diff >= 0)
                 {
                     qta = qta - 100000;
                     switch (fronte)
@@ -848,6 +872,29 @@ namespace WindowsFormsApp1
                             break;
                     }
                     lstMessaggi.Items.Add("assalto eseguito con 100.000 perdite");
+                    playSuono();
+                }
+                else
+                {
+                    qta = qta - 150000;
+                    switch (fronte)
+                    {
+                        case "f1":
+                            txtF1.Text = qta.ToString();
+                            fNord = fNord - 50000;
+                            break;
+                        case "f2":
+                            txtF2.Text = qta.ToString();
+                            fCentro = fCentro - 50000;
+                            break;
+                        case "f3":
+                            txtF3.Text = qta.ToString();
+                            fSud = fSud - 50000;
+                            break;
+                        default:
+                            break;
+                    }
+                    lstMessaggi.Items.Add("assalto eseguito con 150.000 perdite");
                     playSuono();
                 }
             }
