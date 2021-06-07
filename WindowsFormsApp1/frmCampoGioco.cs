@@ -327,6 +327,18 @@ namespace WindowsFormsApp1
             gestioneBottoni(false);
             rndsceltaIniz = new Random();
             int rnd=rndsceltaIniz.Next(1, 4);
+            if(discBot<2&&cmbBot<2&&ptnAzioneBot>=2)
+            {
+                if (cmbBot < 3)
+                {
+                    cmbBot += 1;
+                }
+                if (discBot < 3)
+                {
+                    discUtente += 1;
+                }
+                ptnAzioneBot = ptnAzioneBot - 2;
+            }
             switch (rnd) //azione
             {
                 case 1: //spostamento
@@ -415,6 +427,7 @@ namespace WindowsFormsApp1
                             {
                                 discUtente += 1;
                             }
+                                ptnAzioneBot = ptnAzioneBot - 2;
                         }
 
                     }
@@ -446,6 +459,8 @@ namespace WindowsFormsApp1
                 }
                 qtaRiservaBot += 50000;
                 ptnAzioneBot++;
+                discBot--;
+                cmbBot--;
             }
             gestioneBottoni(true);
             gestioneGiorno();
