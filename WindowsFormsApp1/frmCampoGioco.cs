@@ -380,9 +380,12 @@ namespace WindowsFormsApp1
                         {
                             if (fNord > 100000)
                             {
-                                qta = rndQtaTruppe.Next(50000, fNord / 2);
+                                qta = fNord;
+                                assaltoBot(f, qta);
+                                vincitaBot(f);
+                                vincita("f1");
                             }
-
+                           
                         }
                         else
                         {
@@ -390,19 +393,25 @@ namespace WindowsFormsApp1
                             {
                                 if (fCentro > 100000)
                                 {
-                                    qta = rndQtaTruppe.Next(50000, fCentro / 2);
+                                    qta = fCentro;
+                                    assaltoBot(f, qta);
+                                    vincitaBot(f);
+                                    vincita("f2");
                                 }
                             }
                             else
                             {
                                 if (fSud > 100000)
                                 {
-                                    qta = rndQtaTruppe.Next(50000, fSud / 2);
+                                    qta = fSud;
+                                    assaltoBot(f, qta);
+                                    vincitaBot(f);
+                                    vincita("f3");
                                 }
+                                
                             }
                         }
-                        assaltoBot(f, qta);
-                        vincitaBot(f);
+                        
                     }
                     else
                         goto case 3;
@@ -734,14 +743,17 @@ namespace WindowsFormsApp1
                 case "Nord":
                     assalto("f1", Convert.ToInt32(txtF1.Text));
                     vincita("f1");
+                    vincitaBot(1);
                     break;
                 case "Centro":
                     assalto("f2", Convert.ToInt32(txtF2.Text));
                     vincita("f2");
+                    vincitaBot(2);
                     break;
                 case "Sud":
                     assalto("f3", Convert.ToInt32(txtF3.Text));
                     vincita("f3");
+                    vincitaBot(3);
                     break;
                 default:
                     MessageBox.Show("Selezionare fronte: nord - centro - sud");

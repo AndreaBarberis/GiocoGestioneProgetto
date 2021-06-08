@@ -40,32 +40,38 @@
             // 
             // btnDisc
             // 
+            this.btnDisc.BackColor = System.Drawing.Color.Transparent;
+            this.btnDisc.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnDisc.Location = new System.Drawing.Point(51, 68);
             this.btnDisc.Name = "btnDisc";
             this.btnDisc.Size = new System.Drawing.Size(119, 57);
             this.btnDisc.TabIndex = 0;
             this.btnDisc.Text = "Ora dei sacrifici";
-            this.btnDisc.UseVisualStyleBackColor = true;
+            this.btnDisc.UseVisualStyleBackColor = false;
             this.btnDisc.Click += new System.EventHandler(this.btnDisc_Click);
             // 
             // btnTre
             // 
+            this.btnTre.BackColor = System.Drawing.Color.Transparent;
+            this.btnTre.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnTre.Location = new System.Drawing.Point(51, 158);
             this.btnTre.Name = "btnTre";
             this.btnTre.Size = new System.Drawing.Size(119, 59);
             this.btnTre.TabIndex = 1;
             this.btnTre.Text = "Sabota linea ferroviaria";
-            this.btnTre.UseVisualStyleBackColor = true;
+            this.btnTre.UseVisualStyleBackColor = false;
             this.btnTre.Click += new System.EventHandler(this.btnTre_Click);
             // 
             // btnSpia
             // 
+            this.btnSpia.BackColor = System.Drawing.Color.Transparent;
+            this.btnSpia.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnSpia.Location = new System.Drawing.Point(51, 252);
             this.btnSpia.Name = "btnSpia";
             this.btnSpia.Size = new System.Drawing.Size(119, 58);
             this.btnSpia.TabIndex = 2;
             this.btnSpia.Text = "spionaggio";
-            this.btnSpia.UseVisualStyleBackColor = true;
+            this.btnSpia.UseVisualStyleBackColor = false;
             this.btnSpia.Click += new System.EventHandler(this.btnSpia_Click);
             // 
             // richTextBox1
